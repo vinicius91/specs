@@ -1,4 +1,4 @@
 specs
 =====
 
-Multi-Level HEalthcare Inforamtion Modelling Specifications Specifications
+Multi-Level Healthcare Information Modelling Specifications Specifications
