@@ -1,0 +1,9 @@
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="public">
+<!-- ............................................................ -->
+<!-- XML Catalog for MLHIM RM....................... -->
+<!-- File catalog.xml ........................................... -->
+    
+    <uri name="http://www.mlhim.org/xmlns/mlhim2/2_4_0/mlhim2.xsd" uri="/media/48C46076C46067E0/Users/Tim/MLHIM/mlhim-specs/schemas/mlhim2.xsd"/>
+    
+    
+</catalog>

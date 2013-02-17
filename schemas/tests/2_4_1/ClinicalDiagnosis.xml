@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mlhim2:CCD xmlns:mlhim2="http://www.mlhim.org/xmlns/mlhim2/2_4_1" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:data-view="http://www.w3.org/2003/g/data-view#"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.mlhim.org/xmlns/mlhim2/2_4_1 file:/home/tim/MLHIM/mlhim-specs/schemas/tests/2_4_1/ccd-122ea196-3460-46fe-996b-c265eef7d98d.xsd">
+  <mlhim2:el-f69b4b89-facd-40b8-a833-07ecae87256f>
+    <mlhim2:el-82277514-3bdf-4579-95f0-0ba3ea912fe5>
+      <mlhim2:data-name>Clinical diagnosis</mlhim2:data-name>
+      <mlhim2:magnitude>0</mlhim2:magnitude>
+      <mlhim2:error>0</mlhim2:error>
+      <mlhim2:accuracy>0.0</mlhim2:accuracy>
+      <mlhim2:ratio-type>proportion</mlhim2:ratio-type>
+      <mlhim2:numerator>0</mlhim2:numerator>
+      <mlhim2:denominator>0</mlhim2:denominator>
+      <mlhim2:numerator-units>numerator-units0</mlhim2:numerator-units>
+      <mlhim2:denominator-units>denominator-units0</mlhim2:denominator-units>
+    </mlhim2:el-82277514-3bdf-4579-95f0-0ba3ea912fe5>
+  </mlhim2:el-f69b4b89-facd-40b8-a833-07ecae87256f>
+</mlhim2:CCD>
