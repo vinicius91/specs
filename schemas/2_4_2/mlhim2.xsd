@@ -542,12 +542,19 @@
                 or may not come from a standard terminology. </xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:ratio-units">
+            <xs:annotation>
+              <xs:documentation>Used to convey the meaning of the magnitude (ratio units). May or may not come from a standard terminology. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="numerator-units" type="mlhim2:DvStringType"/>  
   <xs:element name="denominator-units" type="mlhim2:DvStringType"/>    
+  <xs:element name="ratio-units" type="mlhim2:DvStringType"/>  
   <xs:element name="DvRatio" substitutionGroup="mlhim2:DvQuantified mlhim2:DvOrdered mlhim2:DvAny" type="mlhim2:DvRatioType"/>
   
   <xs:complexType name="DvIntervalType">
