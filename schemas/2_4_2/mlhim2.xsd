@@ -455,7 +455,7 @@
     <xs:complexContent>
       <xs:extension base="mlhim2:DvQuantifiedType">
         <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="1" name="DvCount-units" type="xs:string">
+          <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:DvCount-units">
             <xs:annotation>
               <xs:documentation>The name or type of the countable quantity.Examples: cigarettes, drinks, pregnancies, episodes,
                 etc.</xs:documentation>
@@ -465,6 +465,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="DvCount-units" type="mlhim2:DvStringType"/>  
   <xs:element name="DvCount" substitutionGroup="mlhim2:DvQuantified mlhim2:DvAny" type="mlhim2:DvCountType"/>
   
   
@@ -481,9 +482,8 @@
         <xs:sequence>
           <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:DvQuantity-units">
             <xs:annotation>
-              <xs:documentation>Stringified units, expressed in UCUM unit syn- tax, e.g. "kg/m2", “mm[Hg]", "ms-1", "km/h". NOTICE!
-                The type is DvCodedString and it must be completed correctly. Entering a string as a 'value' here will cause the CCD to
-                be invalid. UOM codes can be found: http://aurora.regenstrief.org/~ucum/ucum.html Also see:
+              <xs:documentation>Stringified units, expressed in UCUM unit syn- tax, e.g. "kg/m2", “mm[Hg]", "ms-1", "km/h". A DvCodedStringType should be used when possible.
+                 UOM codes can be found: http://aurora.regenstrief.org/~ucum/ucum.html Also see:
                 http://www.unitsofmeasure.org/ Also available in other terminologies such as SNOMEDCT. </xs:documentation>
             </xs:annotation>
           </xs:element>
@@ -491,7 +491,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="DvQuantity-units" type="mlhim2:DvCodedStringType"/>
+  <xs:element name="DvQuantity-units" type="mlhim2:DvStringType"/>
   <xs:element name="DvQuantity" substitutionGroup="mlhim2:DvQuantified mlhim2:DvOrdered mlhim2:DvAny" type="mlhim2:DvQuantityType"/>
   
   
@@ -530,13 +530,13 @@
               <xs:documentation>denominator of ratio </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="1" minOccurs="1" name="numerator-units" type="xs:string">
+          <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:numerator-units">
             <xs:annotation>
               <xs:documentation>Used to convey the meaning of the numerator. Typically countable units such as; cigarettes, drinks,
                 exercise periods, etc. May or may not come from a terminology such as UCUM. </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="1" minOccurs="1" name="denominator-units" type="xs:string">
+          <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:denominator-units">
             <xs:annotation>
               <xs:documentation>Used to convey the meaning of the denominator. Typically units such as; days, years, months, etc. May
                 or may not come from a standard terminology. </xs:documentation>
@@ -546,6 +546,8 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
+  <xs:element name="numerator-units" type="mlhim2:DvStringType"/>  
+  <xs:element name="denominator-units" type="mlhim2:DvStringType"/>    
   <xs:element name="DvRatio" substitutionGroup="mlhim2:DvQuantified mlhim2:DvOrdered mlhim2:DvAny" type="mlhim2:DvRatioType"/>
   
   <xs:complexType name="DvIntervalType">
