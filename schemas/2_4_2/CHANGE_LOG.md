@@ -1,5 +1,5 @@
 #Changes from 2.4.1 to 2.4.2
-
+Planned entries that are in _italics_ have been completed and moved to the Committed section.
 
 
 ##Committed:
@@ -10,7 +10,7 @@ thus allowing all of them to be defined either by a DvString (when the unit is n
 2. There should be a 'ratio_units' attribute in DvRatio. The probability that, in one of the zillions of healthcare domains, for a given concept expressed as a ratio, 
 the numerator unit is 'A', the denominator unit is 'B', and the ratio unit is known as 'Omega_Z' instead of 'A/B', is not zero.
 
-
+3. Rename the XMind template from CDD-(version).xmt  to MLHIM_Model-(version).xmt
 
 
 
@@ -23,7 +23,7 @@ thus allowing all of them to be defined either by a DvString (when the unit is n
 2. _There should be a 'ratio_units' attribute in DvRatio. The probability that, in one of the zillions of healthcare domains, for a given concept expressed as a ratio, 
 the numerator unit is 'A', the denominator unit is 'B', and the ratio unit is known as 'Omega_Z' instead of 'A/B', is not zero._
 
-
+3. _Rename the XMind template from CDD-(version).xmt  to MLHIM_Model-(version).xmt_
 
 
 
