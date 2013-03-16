@@ -1264,40 +1264,6 @@
   </xs:complexType>
   <xs:element abstract="true" name="Item" substitutionGroup="mlhim2:Definition" type="mlhim2:ItemType"/>
   
-  <xs:complexType name="SlotType">
-    <xs:annotation>
-      <xs:documentation>A structure allowing the inclusion of one CCD inside a CCD. The possible CCDs allowed is restricted to
-        those CCDs in the allowed-ccds attribute. </xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="mlhim2:ItemType">
-        <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="1" name="slot-name" type="xs:string">
-            <xs:annotation>
-              <xs:documentation>String name identifying this slot.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element maxOccurs="unbounded" minOccurs="1" ref="mlhim2:slot-data">
-            <xs:annotation>
-              <xs:documentation>A list of valid ccds for this Slot. Each maybe optionally marked as required in the
-                Slot.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="slot-data" type="mlhim2:SlotDataType"/>
-  <xs:element name="Slot" substitutionGroup="mlhim2:Item mlhim2:Definition" type="mlhim2:SlotType"/>
-  
-  <xs:complexType name="SlotDataType">
-    <xs:sequence>
-      <xs:element maxOccurs="1" minOccurs="1" default="0" name="is-required" type="xs:boolean"/>
-      <xs:element maxOccurs="1" minOccurs="1" name="ccd-uri" type="xs:anyURI"/>
-    </xs:sequence>
-  </xs:complexType>
-  
-  
   <xs:complexType name="ClusterType">
     <xs:annotation>
       <xs:documentation>The grouping variant of Item, which may contain further instances of Item, in an ordered list. This

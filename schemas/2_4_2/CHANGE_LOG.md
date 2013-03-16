@@ -12,6 +12,7 @@ the numerator unit is 'A', the denominator unit is 'B', and the ratio unit is kn
 
 3. Rename the XMind template from CDD-(version).xmt  to MLHIM_Model-(version).xmt
 
+4. Remove the SlotType and SlotType. Slots are not useful in MLHIM
 
 
 ##Planned:
@@ -25,6 +26,7 @@ the numerator unit is 'A', the denominator unit is 'B', and the ratio unit is kn
 
 3. _Rename the XMind template from CDD-(version).xmt  to MLHIM_Model-(version).xmt_
 
+4. _Remove the SlotType and SlotType. Slots are not useful in MLHIM_
 
 
 
