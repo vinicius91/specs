@@ -14,6 +14,7 @@ the numerator unit is 'A', the denominator unit is 'B', and the ratio unit is kn
 
 4. Remove the SlotType and SlotType. Slots are not useful in MLHIM
 
+5. In DvEncapsulated the element name charset has been changed to encoding. Character set is no longer recommended for use in computer science.
 
 ##Planned:
 
@@ -28,5 +29,5 @@ the numerator unit is 'A', the denominator unit is 'B', and the ratio unit is kn
 
 4. _Remove the SlotType and SlotType. Slots are not useful in MLHIM_
 
-
+5. _In DvEncapsulated the element name charset has been changed to encoding. Character set is no longer recommended for use in computer science_
 
