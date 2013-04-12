@@ -16,6 +16,13 @@ the numerator unit is 'A', the denominator unit is 'B', and the ratio unit is kn
 
 5. In DvEncapsulated the element name charset has been changed to encoding. Character set is no longer recommended for use in computer science.
 
+6. In DvOrdered, remove the normal-rage element and rename other-reference-ranges to reference-ranges. The semantics of the named elements causes 
+confusion in modelling and has no real purpose in MLHIM. Allowing zero to unbounded numbers of reference-ranges is necessary in many cases and each 
+reference range needs its own semantics, independent of the MLHIM RM.
+ 
+ 
+ 
+ 
 ##Planned:
 
 1. _DvStringType should be the type for the 'units' attribute of DvCount, DvQuantity and DvRatio (numerator, denominator and ratio), 
@@ -31,3 +38,9 @@ the numerator unit is 'A', the denominator unit is 'B', and the ratio unit is kn
 
 5. _In DvEncapsulated the element name charset has been changed to encoding. Character set is no longer recommended for use in computer science_
 
+6. _In DvOrdered, remove the normal-rage element and rename other-reference-ranges to reference-ranges. The semantics of the named elements causes 
+confusion in modelling and has no real purpose in MLHIM. Allowing zero to unbounded numbers of reference-ranges is necessary in many cases and each 
+reference range needs its own semantics, independent of the MLHIM RM._
+ 
+ 7. Include a boolean in ReferenceRange to indicate if this is a normal range.  The name is, 'is-normal'. 
+ 

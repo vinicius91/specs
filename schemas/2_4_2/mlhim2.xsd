@@ -313,15 +313,9 @@
     <xs:complexContent>
       <xs:extension base="mlhim2:DvAnyType">
         <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:normal-range">
+          <xs:element maxOccurs="unbounded" minOccurs="0" ref="mlhim2:reference-ranges">
             <xs:annotation>
-              <xs:documentation>Optional normal range. </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element maxOccurs="unbounded" minOccurs="0" ref="mlhim2:other-reference-ranges">
-            <xs:annotation>
-              <xs:documentation>Optional list of ReferenceRanges for this value in its particular measurement context
-              </xs:documentation>
+              <xs:documentation>Optional list of ReferenceRanges for this value in its particular measurement context</xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element maxOccurs="1" minOccurs="0" name="normal-status" type="xs:string">
@@ -335,8 +329,7 @@
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="normal-range" type="mlhim2:ReferenceRangeType"/>
-  <xs:element name="other-reference-ranges" type="mlhim2:ReferenceRangeType"/>
+  <xs:element name="reference-ranges" type="mlhim2:ReferenceRangeType"/>
   <xs:element abstract="true" name="DvOrdered" substitutionGroup="mlhim2:DvAny" type="mlhim2:DvOrderedType"/>
   
   
@@ -557,6 +550,35 @@
   <xs:element name="ratio-units" type="mlhim2:DvStringType"/>  
   <xs:element name="DvRatio" substitutionGroup="mlhim2:DvQuantified mlhim2:DvOrdered mlhim2:DvAny" type="mlhim2:DvRatioType"/>
   
+  
+  <xs:complexType name="DvTemporalType">
+    <xs:annotation>
+      <xs:documentation>Class defining the concept of date and time types. 
+        Must be constrained in CCDs to be one or more of the below elements.  
+        This gives the modeller the ability to optionally allow partial dates at run time.  
+        Setting maxOccurs and minOccurs to zero cause the element to be prohibitied.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="mlhim2:DvOrderedType">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-date" type="xs:date"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-time" type="xs:time"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-datetime" type="xs:dateTime"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-day" type="xs:gDay"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-month" type="xs:gMonth"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-year" type="xs:gYear"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-year-month" type="xs:gYearMonth"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-month-day" type="xs:gMonthDay"/>
+          <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-duration" type="xs:duration"/>              
+        </xs:sequence>
+      </xs:extension> 
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DvTemporal" substitutionGroup="mlhim2:DvAny" type="mlhim2:DvTemporalType"/>
+  
+  
+  
   <xs:complexType name="DvIntervalType">
     <xs:annotation>
       <xs:documentation>Generic class defining an interval (i.e. range) of a comparable type. An interval is a contiguous
@@ -623,6 +645,12 @@
               <xs:documentation>The data range for this meaning. </xs:documentation>
             </xs:annotation>
           </xs:element>
+          <xs:element maxOccurs="1" minOccurs="1" name="is-normal" type="xs:boolean">
+            <xs:annotation>
+              <xs:documentation>True if this reference range only contains values that are considered to be normal.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -630,80 +658,9 @@
   <xs:element name="data-range" type="mlhim2:DvIntervalType"/>
   <xs:element name="ReferenceRange" substitutionGroup="mlhim2:DvAny" type="mlhim2:ReferenceRangeType"/>
   
-  
-  <xs:complexType name="DvTemporalType">
-    <xs:annotation>
-      <xs:documentation>Class defining the concept of date and time types. 
-        Must be constrained in CCDs to be one of the below elements.  
-        This gives the modeller the ability to optionally allow partial dates at run time.  
-        Setting maxOccurs and minOccurs to zero cause the element to be prohibitied.
-      </xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="mlhim2:DvOrderedType">
-        <xs:sequence>
-                <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-date" type="xs:date"/>
-                <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-time" type="xs:time"/>
-                <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-datetime" type="xs:dateTime"/>
-                <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-day" type="xs:gDay"/>
-                <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-month" type="xs:gMonth"/>
-                <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-year" type="xs:gYear"/>
-                <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-year-month" type="xs:gYearMonth"/>
-                <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-month-day" type="xs:gMonthDay"/>
-                <xs:element maxOccurs="1" minOccurs="0" name="dvtemporal-duration" type="xs:duration"/>              
-        </xs:sequence>
-      </xs:extension> 
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="DvTemporal" substitutionGroup="mlhim2:DvAny" type="mlhim2:DvTemporalType"/>
 
   <!--Common package types-->
-  
-  <xs:complexType name="FeederAuditType">
-    <xs:annotation>
-      <xs:documentation>Audit and other meta-data for software applications and systems in the feeder chain. This information
-        is not typically used by modellers but by the applications themselves to "tag" entries when performing an extract.
-      </xs:documentation>
-    </xs:annotation>
-    <xs:sequence>
-      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:originating-system-audit">
-        <xs:annotation>
-          <xs:documentation>Any audit information for the information item from the originating system. </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="unbounded" minOccurs="1" ref="mlhim2:originating-system-ids">
-        <xs:annotation>
-          <xs:documentation>Identifiers used for the item in the originating system, e.g. filler and placer ids.
-          </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:feeder-system-audit">
-        <xs:annotation>
-          <xs:documentation>Any audit information for the information item from the feeder system, if different from the
-            originating system. </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="unbounded" minOccurs="1" ref="mlhim2:feeder-system-ids">
-        <xs:annotation>
-          <xs:documentation>Identifiers used for the item in the feeder sys- tem, where the feeder system is distinct from the
-            originating system. </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:original-content">
-        <xs:annotation>
-          <xs:documentation>Reference to original content corresponding to the MLHIM content at this node. Typically a
-            URI reference to a document or message in a persistent store associated with the record. </xs:documentation>
-        </xs:annotation>
-      </xs:element>
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="originating-system-audit" type="mlhim2:FeederAuditDetailsType"/>
-  <xs:element name="originating-system-ids" type="mlhim2:DvIdentifierType"/>
-  <xs:element name="feeder-system-audit" type="mlhim2:FeederAuditDetailsType"/>
-  <xs:element name="feeder-system-ids" type="mlhim2:DvIdentifierType"/>
-  <xs:element name="original-content" type="mlhim2:DvURIType"/>
-  <xs:element name="FeederAudit" type="mlhim2:FeederAuditType"/>
-  
+ 
   
   <xs:complexType name="FeederAuditDetailsType">
     <xs:annotation>
@@ -757,6 +714,51 @@
   <xs:element name="subject" type="mlhim2:PartyProxyType"/>
   <xs:element name="FeederAuditDetails" type="mlhim2:FeederAuditDetailsType"/>
   
+  <xs:complexType name="FeederAuditType">
+    <xs:annotation>
+      <xs:documentation>Audit and other meta-data for software applications and systems in the feeder chain. This information
+        is not typically used by modellers but by the applications themselves to "tag" entries when performing an extract.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:originating-system-audit">
+        <xs:annotation>
+          <xs:documentation>Any audit information for the information item from the originating system. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="1" ref="mlhim2:originating-system-ids">
+        <xs:annotation>
+          <xs:documentation>Identifiers used for the item in the originating system, e.g. filler and placer ids.
+          </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:feeder-system-audit">
+        <xs:annotation>
+          <xs:documentation>Any audit information for the information item from the feeder system, if different from the
+            originating system. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="unbounded" minOccurs="1" ref="mlhim2:feeder-system-ids">
+        <xs:annotation>
+          <xs:documentation>Identifiers used for the item in the feeder sys- tem, where the feeder system is distinct from the
+            originating system. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:original-content">
+        <xs:annotation>
+          <xs:documentation>Reference to original content corresponding to the MLHIM content at this node. Typically a
+            URI reference to a document or message in a persistent store associated with the record. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="originating-system-audit" type="mlhim2:FeederAuditDetailsType"/>
+  <xs:element name="originating-system-ids" type="mlhim2:DvIdentifierType"/>
+  <xs:element name="feeder-system-audit" type="mlhim2:FeederAuditDetailsType"/>
+  <xs:element name="feeder-system-ids" type="mlhim2:DvIdentifierType"/>
+  <xs:element name="original-content" type="mlhim2:DvURIType"/>
+  <xs:element name="FeederAudit" type="mlhim2:FeederAuditType"/>
+  
   
   <xs:complexType abstract="true" name="LocatableType">
     <xs:annotation>
@@ -792,6 +794,76 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element abstract="true" name="Definition" substitutionGroup="mlhim2:Locatable" type="mlhim2:DefinitionType"/>
+  
+  <xs:complexType abstract="true" name="PartyProxyType">
+    <xs:annotation>
+      <xs:documentation>Abstract concept of a proxy description of a party, including an optional link to data for this party
+        in a demographic or other identity management system. Sub- typed into PartyIdentified and PartySelf. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="mlhim2:LocatableType">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="0" name="party-name" type="xs:string">
+            <xs:annotation>
+              <xs:documentation>Optional human-readable name (in String form). </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+          <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:external-ref">
+            <xs:annotation>
+              <xs:documentation>Optional reference to more detailed demographic or identification information for this party, in an
+                external system. </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="external-ref" type="mlhim2:DvURIType"/>
+  <xs:element abstract="true" name="PartyProxy" substitutionGroup="mlhim2:Locatable" type="mlhim2:PartyProxyType"/>
+  
+  
+  <xs:complexType name="PartyIdentifiedType">
+    <xs:annotation>
+      <xs:documentation>Proxy data for an identified party other than the subject of the record, minimally consisting of
+        human-readable identifier(s), such as name, formal (and possibly computable) identifiers such as NHS number, and an
+        optional link to external data. There must be at least one of name, identifier or external-ref present.Used to describe
+        parties where only identifiers may be known, and there is no entry at all in the demographic system (or even no
+        demographic system). Typi- cally for health care providers, e.g. name and provider number of an institution. Should not
+        be used to include patient identifying information. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="mlhim2:PartyProxyType">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:details">
+            <xs:annotation>
+              <xs:documentation>Structural details about the party </xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="details" type="mlhim2:ItemType"/>
+  <xs:element name="PartyIdentified" substitutionGroup="mlhim2:PartyProxy" type="mlhim2:PartyIdentifiedType"/>
+  
+  <xs:complexType name="PartySelfType">
+    <xs:annotation>
+      <xs:documentation>Party proxy representing the subject of the record. May or may not have external-ref set. But
+        external-ref usually points to a record persisted in a demographics service. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:restriction base="mlhim2:PartyProxyType">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" name="party-name" type="xs:string" fixed="Self">
+            <xs:annotation>
+              <xs:documentation>Fixed to the string "Self".</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="PartySelf" substitutionGroup="mlhim2:PartyProxy" type="mlhim2:PartySelfType"/>
   
   <xs:complexType name="AttestationType">
     <xs:annotation>
@@ -887,76 +959,6 @@
   <xs:element name="end-time" type="xs:dateTime"/>
   <xs:element name="Participation" type="mlhim2:ParticipationType"/>
   
-  <xs:complexType abstract="true" name="PartyProxyType">
-    <xs:annotation>
-      <xs:documentation>Abstract concept of a proxy description of a party, including an optional link to data for this party
-        in a demographic or other identity management system. Sub- typed into PartyIdentified and PartySelf. </xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="mlhim2:LocatableType">
-        <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="0" name="party-name" type="xs:string">
-            <xs:annotation>
-              <xs:documentation>Optional human-readable name (in String form). </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:external-ref">
-            <xs:annotation>
-              <xs:documentation>Optional reference to more detailed demographic or identification information for this party, in an
-                external system. </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="external-ref" type="mlhim2:DvURIType"/>
-  <xs:element abstract="true" name="PartyProxy" substitutionGroup="mlhim2:Locatable" type="mlhim2:PartyProxyType"/>
-  
-  
-  <xs:complexType name="PartyIdentifiedType">
-    <xs:annotation>
-      <xs:documentation>Proxy data for an identified party other than the subject of the record, minimally consisting of
-        human-readable identifier(s), such as name, formal (and possibly computable) identifiers such as NHS number, and an
-        optional link to external data. There must be at least one of name, identifier or external-ref present.Used to describe
-        parties where only identifiers may be known, and there is no entry at all in the demographic system (or even no
-        demographic system). Typi- cally for health care providers, e.g. name and provider number of an institution. Should not
-        be used to include patient identifying information. </xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="mlhim2:PartyProxyType">
-        <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:details">
-            <xs:annotation>
-              <xs:documentation>Structural details about the party </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="details" type="mlhim2:ItemType"/>
-  <xs:element name="PartyIdentified" substitutionGroup="mlhim2:PartyProxy" type="mlhim2:PartyIdentifiedType"/>
-  
-  
-  <xs:complexType name="PartySelfType">
-    <xs:annotation>
-      <xs:documentation>Party proxy representing the subject of the record. May or may not have external-ref set. But
-        external-ref usually points to a record persisted in a demographics service. </xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:restriction base="mlhim2:PartyProxyType">
-        <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="1" name="party-name" type="xs:string" fixed="Self">
-            <xs:annotation>
-              <xs:documentation>Fixed to the string "Self".</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:restriction>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="PartySelf" substitutionGroup="mlhim2:PartyProxy" type="mlhim2:PartySelfType"/>
   
   
   <xs:complexType abstract="true" name="ExceptionalValueType">
@@ -1256,7 +1258,7 @@
   
   <xs:complexType abstract="true" name="ItemType">
     <xs:annotation>
-      <xs:documentation>The abstract parent of Event, Slot, Cluster and Element representation classes. </xs:documentation>
+      <xs:documentation>The abstract parent of Cluster and Element representation classes. </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="mlhim2:DefinitionType"/>
@@ -1296,7 +1298,7 @@
     <xs:complexContent>
       <xs:extension base="mlhim2:ItemType">
         <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:Element-dv">
+          <xs:element maxOccurs="unbounded" minOccurs="1" ref="mlhim2:Element-dv">
             <xs:annotation>
               <xs:documentation>Data value type of this leaf </xs:documentation>
             </xs:annotation>
@@ -1393,7 +1395,7 @@
   
   <xs:complexType name="CareEntryType">
     <xs:annotation>
-      <xs:documentation>CareEntry defines protocol and guideline attributes for all clinical entries. </xs:documentation>
+      <xs:documentation>Entry subtype for all entries related to care of an a subject of record. </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="mlhim2:EntryType"/>
