@@ -671,36 +671,36 @@
         definitions. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:system-id">
+      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:system-id">
         <xs:annotation>
           <xs:documentation>Identifier of the system which handled the information item. </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:provider">
+      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:provider">
         <xs:annotation>
           <xs:documentation>Provider(s) who created, committed, forwarded or otherwise handled the item.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:location">
+      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:location">
         <xs:annotation>
           <xs:documentation>Identifier of the particular site/facility within an organisation which handled the item.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:timestamp">
+      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:timestamp">
         <xs:annotation>
           <xs:documentation>DvDateTime timestamp of handling the item. For an originating system, this will be time of creation,
             for an intermediate feeder system, this will be a time of accession or other time of handling, where available.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:subject">
+      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:subject">
         <xs:annotation>
           <xs:documentation>Identifiers for subject of the received information item.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" name="version-id" type="xs:string">
+      <xs:element maxOccurs="1" minOccurs="0" name="version-id" type="xs:string">
         <xs:annotation>
           <xs:documentation>Applicable version information.</xs:documentation>
         </xs:annotation>
@@ -721,30 +721,30 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:originating-system-audit">
+      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:originating-system-audit">
         <xs:annotation>
           <xs:documentation>Any audit information for the information item from the originating system. </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="unbounded" minOccurs="1" ref="mlhim2:originating-system-ids">
+      <xs:element maxOccurs="unbounded" minOccurs="0" ref="mlhim2:originating-system-ids">
         <xs:annotation>
           <xs:documentation>Identifiers used for the item in the originating system, e.g. filler and placer ids.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:feeder-system-audit">
+      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:feeder-system-audit">
         <xs:annotation>
           <xs:documentation>Any audit information for the information item from the feeder system, if different from the
             originating system. </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="unbounded" minOccurs="1" ref="mlhim2:feeder-system-ids">
+      <xs:element maxOccurs="unbounded" minOccurs="0" ref="mlhim2:feeder-system-ids">
         <xs:annotation>
           <xs:documentation>Identifiers used for the item in the feeder sys- tem, where the feeder system is distinct from the
             originating system. </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:original-content">
+      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:original-content">
         <xs:annotation>
           <xs:documentation>Reference to original content corresponding to the MLHIM content at this node. Typically a
             URI reference to a document or message in a persistent store associated with the record. </xs:documentation>
@@ -834,7 +834,7 @@
     <xs:complexContent>
       <xs:extension base="mlhim2:PartyProxyType">
         <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:details">
+          <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:details">
             <xs:annotation>
               <xs:documentation>Structural details about the party </xs:documentation>
             </xs:annotation>
@@ -854,7 +854,7 @@
     <xs:complexContent>
       <xs:restriction base="mlhim2:PartyProxyType">
         <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="1" name="party-name" type="xs:string" fixed="Self">
+          <xs:element maxOccurs="1" minOccurs="0" name="party-name" type="xs:string" fixed="Self">
             <xs:annotation>
               <xs:documentation>Fixed to the string "Self".</xs:documentation>
             </xs:annotation>
@@ -878,27 +878,27 @@
               <xs:documentation>Optional visual representation of content attested e.g. screen image. </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:proof">
+          <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:proof">
             <xs:annotation>
               <xs:documentation>Proof of attestation such as an GPG signature. </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:reason">
+          <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:reason">
             <xs:annotation>
               <xs:documentation>Reason of this attestation. Coded from a standardized vocabulary.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:committer">
+          <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:committer">
             <xs:annotation>
               <xs:documentation>Identity of person who committed the item. </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:time-commmitted">
+          <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:time-commmitted">
             <xs:annotation>
               <xs:documentation>Datetime of committal of the item. </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="1" minOccurs="1" default="1" name="is-pending" type="xs:boolean">
+          <xs:element maxOccurs="1" minOccurs="0" default="1" name="is-pending" type="xs:boolean">
             <xs:annotation>
               <xs:documentation>True if this attestation is outstanding; False means it has been completed. Default == True</xs:documentation>
             </xs:annotation>
@@ -922,25 +922,25 @@
         entities. </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:performer">
+      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:performer">
         <xs:annotation>
           <xs:documentation>The id and possibly demographic system link of the party participating in the activity.
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:function">
+      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:function">
         <xs:annotation>
           <xs:documentation>The function of the Party in this participation (note that a given party might participate in more
             than one way in a particular activity). In some applications this might be called a Role.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:mode">
+      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:mode">
         <xs:annotation>
           <xs:documentation>The mode of the performer / activity interaction, e.g. present, by telephone, by email etc. If the
             participation is by device or software it may contain a protocol standard or interface definition. </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:start-time">
+      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:start-time">
         <xs:annotation>
           <xs:documentation>The beginning datetime when the participation took place.</xs:documentation>
         </xs:annotation>
@@ -967,8 +967,8 @@
       </xs:documentation>
     </xs:annotation>
     <xs:sequence>
-      <xs:element maxOccurs="1" minOccurs="1" name="ev-name" type="xs:string"/>
-      <xs:element maxOccurs="1" minOccurs="1" name="ev-meaning" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ev-name" type="xs:string"/>
+      <xs:element maxOccurs="1" minOccurs="0" name="ev-meaning" type="xs:string"/>
     </xs:sequence>
   </xs:complexType>
   <xs:element abstract="true" name="ExceptionalValue" type="mlhim2:ExceptionalValueType"/>
