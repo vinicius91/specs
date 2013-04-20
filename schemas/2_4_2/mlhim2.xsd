@@ -608,12 +608,12 @@
               <xs:documentation>is upper included in interval </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="1" minOccurs="1" name="lower-unbounded" type="xs:boolean">
+          <xs:element maxOccurs="1" minOccurs="1" name="lower-bounded" type="xs:boolean">
             <xs:annotation>
               <xs:documentation>is lower bounded</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="1" minOccurs="1" name="upper-unbounded" type="xs:boolean">
+          <xs:element maxOccurs="1" minOccurs="1" name="upper-bounded" type="xs:boolean">
             <xs:annotation>
               <xs:documentation>is upper bounded </xs:documentation>
             </xs:annotation>
