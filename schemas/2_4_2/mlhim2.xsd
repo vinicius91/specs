@@ -376,7 +376,7 @@
     <xs:complexContent>
       <xs:extension base="mlhim2:DvOrderedType">
         <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="1" name="magnitude" type="xs:decimal">
+          <xs:element maxOccurs="1" minOccurs="0" name="magnitude" type="xs:decimal">
             <xs:annotation>
               <xs:documentation>Numeric value of the quantity in canonical (i.e. single value) form. </xs:documentation>
             </xs:annotation>
@@ -421,13 +421,13 @@
               </xs:restriction>  
             </xs:simpleType>  
 -->          </xs:element>
-          <xs:element maxOccurs="1" minOccurs="1" name="error" default="0" type="xs:int">
+          <xs:element maxOccurs="1" minOccurs="0" name="error" default="0" type="xs:int">
             <xs:annotation>
               <xs:documentation>Error margin of measurement, indicating error in the recording method or instrument (+/- %).
                 Implemented in subtypes. A logical value of 0 (default) indicates 100% accuracy, i.e. no error. </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="1" minOccurs="1" name="accuracy" default="0" type="xs:decimal">
+          <xs:element maxOccurs="1" minOccurs="0" name="accuracy" default="0" type="xs:decimal">
             <xs:annotation>
               <xs:documentation>Accuracy of the value in the magnitude attribute. 0% to +/- 100% A value of 0 means that the accuracy
                 is unknown. 0 is the default value. </xs:documentation>
