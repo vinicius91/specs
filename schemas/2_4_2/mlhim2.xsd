@@ -443,7 +443,7 @@
     <xs:annotation>
       <xs:documentation>Countable quantities. Used for countable types such as pregnancies and steps (taken by a physiotherapy
         patient), number of cigarettes smoked in a day, etc. Misuse:Not used for amounts of physical entities (which all have
-        standardized units) </xs:documentation>
+        standardized units). Note that CCDs derived from DvCount should make magnitude, error and accuracy attributes minOccurs = '1'. </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="mlhim2:DvQuantifiedType">
@@ -468,6 +468,7 @@
         units. Units were inspired by the Unified Code for Units of Measure (UCUM), developed by Gunther Schadow and Clement J.
         McDonald of The Regenstrief Institute. http://unitsofmeasure.org/ Can also be used for time durations, where it is more
         convenient to treat these as simply a number of individual seconds, minutes, hours, days, months, years, etc. when no temporal calculation is to be performed.
+        Note that CCDs derived from DvQuantity should make magnitude, error and accuracy attributes minOccurs = '1'.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>
