@@ -39,6 +39,7 @@ nosetests.xml
 
 #lock files
 *.lck
+.~lock*
 
 #wingide
 *.wpu
