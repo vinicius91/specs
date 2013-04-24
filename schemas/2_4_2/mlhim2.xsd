@@ -67,9 +67,9 @@
             </xs:annotation>
           </xs:element>
         </xs:sequence>
+        <xs:assert test='string-length(@DvBoolean-dv) > 0 or @ev'/> <!-- An example assert -->
       </xs:extension>
     </xs:complexContent>
-    <!-- <xs:assert test="string-length(@DvBoolean-dv) > 0 or @ev"/>  Needs to be completed. -->
   </xs:complexType>
   <xs:element name="DvBoolean" substitutionGroup="mlhim2:DvAny" type="mlhim2:DvBooleanType"/>
   
