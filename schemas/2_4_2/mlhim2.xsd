@@ -465,9 +465,8 @@
   <xs:complexType name="DvQuantityType">
     <xs:annotation>
       <xs:documentation>Quantitified type representing “scientific” quantities, i.e. quantities expressed as a magnitude and
-        units. Units were inspired by the Unified Code for Units of Measure (UCUM), developed by Gunther Schadow and Clement J.
-        McDonald of The Regenstrief Institute. http://unitsofmeasure.org/ Can also be used for time durations, where it is more
-        convenient to treat these as simply a number of individual seconds, minutes, hours, days, months, years, etc. when no temporal calculation is to be performed.
+        units. Can also be used for time durations, where it is more convenient to treat these as simply a number of individual seconds, 
+        minutes, hours, days, months, years, etc. when no temporal calculation is to be performed.
         Note that CCDs derived from DvQuantity should make magnitude, error and accuracy attributes minOccurs = '1'.
       </xs:documentation>
     </xs:annotation>
@@ -476,9 +475,8 @@
         <xs:sequence>
           <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:DvQuantity-units">
             <xs:annotation>
-              <xs:documentation>Stringified units, expressed in UCUM unit syn- tax, e.g. "kg/m2", “mm[Hg]", "ms-1", "km/h". A DvCodedStringType should be used when possible.
-                 UOM codes can be found: http://aurora.regenstrief.org/~ucum/ucum.html Also see:
-                http://www.unitsofmeasure.org/ Also available in other terminologies such as SNOMEDCT. </xs:documentation>
+              <xs:documentation>Stringified units, expressed in unit syntax, e.g. "kg/m2", “mm[Hg]", "ms-1", "km/h". A DvCodedStringType should be used when possible.
+                 UOM codes can be found: http://www.obofoundry.org Also available in other terminologies such as SNOMEDCT. </xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -527,7 +525,7 @@
           <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:numerator-units">
             <xs:annotation>
               <xs:documentation>Used to convey the meaning of the numerator. Typically countable units such as; cigarettes, drinks,
-                exercise periods, etc. May or may not come from a terminology such as UCUM. </xs:documentation>
+                exercise periods, etc. May or may not come from a terminology such as OBO Foundry Units ontology. </xs:documentation>
             </xs:annotation>
           </xs:element>
           <xs:element maxOccurs="1" minOccurs="1" ref="mlhim2:denominator-units">
@@ -691,7 +689,7 @@
           </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:timestamp">
+      <xs:element maxOccurs="1" minOccurs="0" name="timestamp" type="xs:dateTime">
         <xs:annotation>
           <xs:documentation>DvDateTime timestamp of handling the item. For an originating system, this will be time of creation,
             for an intermediate feeder system, this will be a time of accession or other time of handling, where available.
@@ -713,7 +711,6 @@
   <xs:element name="system-id" type="mlhim2:DvIdentifierType"/>
   <xs:element name="provider" type="mlhim2:PartyIdentifiedType"/>
   <xs:element name="location" type="mlhim2:ItemType"/>
-  <xs:element name="timestamp" type="xs:dateTime"/>
   <xs:element name="subject" type="mlhim2:PartyProxyType"/>
   <xs:element name="FeederAuditDetails" type="mlhim2:FeederAuditDetailsType"/>
   
@@ -803,8 +800,6 @@
       <xs:documentation>Abstract concept of a proxy description of a party, including an optional link to data for this party
         in a demographic or other identity management system. Sub- typed into PartyIdentified and PartySelf. </xs:documentation>
     </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="mlhim2:LocatableType">
         <xs:sequence>
           <xs:element maxOccurs="1" minOccurs="0" name="party-name" type="xs:string">
             <xs:annotation>
@@ -818,11 +813,9 @@
             </xs:annotation>
           </xs:element>
         </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
   </xs:complexType>
   <xs:element name="external-ref" type="mlhim2:DvURIType"/>
-  <xs:element abstract="true" name="PartyProxy" substitutionGroup="mlhim2:Locatable" type="mlhim2:PartyProxyType"/>
+  <xs:element abstract="true" name="PartyProxy" type="mlhim2:PartyProxyType"/>
   
   
   <xs:complexType name="PartyIdentifiedType">
@@ -857,7 +850,7 @@
     <xs:complexContent>
       <xs:restriction base="mlhim2:PartyProxyType">
         <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="0" name="party-name" type="xs:string" fixed="Self">
+          <xs:element maxOccurs="1" minOccurs="1" name="party-name" type="xs:string" fixed="Self">
             <xs:annotation>
               <xs:documentation>Fixed to the string "Self".</xs:documentation>
             </xs:annotation>
@@ -896,14 +889,14 @@
               <xs:documentation>Identity of person who committed the item. </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:time-commmitted">
+          <xs:element maxOccurs="1" minOccurs="0" name="time-commmitted" type="xs:dateTime">
             <xs:annotation>
               <xs:documentation>Datetime of committal of the item. </xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="1" minOccurs="0" default="1" name="is-pending" type="xs:boolean">
+          <xs:element maxOccurs="1" minOccurs="0" default="true" name="is-pending" type="xs:boolean">
             <xs:annotation>
-              <xs:documentation>True if this attestation is outstanding; False means it has been completed. Default == True</xs:documentation>
+              <xs:documentation>True if this attestation is outstanding; 'false' means it has been completed. Default is 'true'</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -914,7 +907,6 @@
   <xs:element name="proof" type="mlhim2:DvParsableType"/>
   <xs:element name="reason" type="mlhim2:DvCodedStringType"/>
   <xs:element name="committer" type="mlhim2:PartyProxyType"/>
-  <xs:element name="time-commmitted" type="xs:dateTime"/>
   <xs:element name="Attestation" substitutionGroup="mlhim2:Locatable" type="mlhim2:AttestationType"/>
   
   <xs:complexType name="ParticipationType">
@@ -943,12 +935,12 @@
             participation is by device or software it may contain a protocol standard or interface definition. </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:start-time">
+      <xs:element maxOccurs="1" minOccurs="0" name="start-time" type="xs:dateTime">
         <xs:annotation>
           <xs:documentation>The beginning datetime when the participation took place.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:end-time">
+      <xs:element maxOccurs="1" minOccurs="0" name="end-time" type="xs:dateTime">
         <xs:annotation>
           <xs:documentation>The ending datetime when the participation took place.</xs:documentation>
         </xs:annotation>
@@ -958,8 +950,6 @@
   <xs:element name="performer" type="mlhim2:PartyProxyType"/>
   <xs:element name="function" type="mlhim2:DvCodedStringType"/>
   <xs:element name="mode" type="mlhim2:DvCodedStringType"/>
-  <xs:element name="start-time" type="xs:dateTime"/>
-  <xs:element name="end-time" type="xs:dateTime"/>
   <xs:element name="Participation" type="mlhim2:ParticipationType"/>
   
   
