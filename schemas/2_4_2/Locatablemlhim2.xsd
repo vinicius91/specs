@@ -97,6 +97,7 @@
   </xs:complexType>
   <xs:element name="DvURI" substitutionGroup="mlhim2:DvAny" type="mlhim2:DvURIType"/>
   
+  
   <xs:complexType name="DvStringType">
     <xs:annotation>
       <xs:documentation>DvString: The string data type can contain characters, line feeds, carriage returns, and tab characters.</xs:documentation>
@@ -187,6 +188,7 @@
   </xs:complexType>
   <xs:element name="DvIdentifier" substitutionGroup="mlhim2:DvString mlhim2:DvAny" type="mlhim2:DvIdentifierType"/>
   
+  
   <xs:complexType abstract="true" name="DvEncapsulatedType">
     <xs:annotation>
       <xs:documentation>Abstract class defining the common meta-data of all types of encapsulated data. </xs:documentation>
@@ -238,7 +240,7 @@
           </xs:element>
           <xs:element maxOccurs="1" minOccurs="0" name="formalism" type="xs:string">
             <xs:annotation>
-              <xs:documentation>Name of the formalism, e.g. “GLIF 1.0”, “proforma” etc. </xs:documentation>
+              <xs:documentation>Name of the formalism, e.g. “GLIF 1.0”, “dADL”, etc. </xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -301,7 +303,8 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="DvMedia" substitutionGroup="mlhim2:DvEncapsulated mlhim2:DvAny" type="mlhim2:DvMediaType"/>
-
+  
+  
   <xs:complexType abstract="true" name="DvOrderedType">
     <xs:annotation>
       <xs:documentation>Abstract class defining the concept of ordered values, which includes ordinals as well as true
@@ -329,6 +332,7 @@
   </xs:complexType>
   <xs:element name="reference-ranges" type="mlhim2:ReferenceRangeType"/>
   <xs:element abstract="true" name="DvOrdered" substitutionGroup="mlhim2:DvAny" type="mlhim2:DvOrderedType"/>
+  
   
   <xs:complexType name="DvOrdinalType">
     <xs:annotation>
@@ -457,7 +461,8 @@
   </xs:complexType>
   <xs:element name="DvCount-units" type="mlhim2:DvStringType"/>  
   <xs:element name="DvCount" substitutionGroup="mlhim2:DvQuantified mlhim2:DvAny" type="mlhim2:DvCountType"/>
-    
+  
+  
   <xs:complexType name="DvQuantityType">
     <xs:annotation>
       <xs:documentation>Quantitified type representing “scientific” quantities, i.e. quantities expressed as a magnitude and
@@ -481,7 +486,8 @@
   </xs:complexType>
   <xs:element name="DvQuantity-units" type="mlhim2:DvStringType"/>
   <xs:element name="DvQuantity" substitutionGroup="mlhim2:DvQuantified mlhim2:DvOrdered mlhim2:DvAny" type="mlhim2:DvQuantityType"/>
-
+  
+  
   <xs:complexType name="DvRatioType">
     <xs:annotation>
       <xs:documentation>Models a ratio of values, i.e. where the numerator and denominator are both pure numbers. Should not
@@ -533,7 +539,8 @@
             <xs:annotation>
               <xs:documentation>Used to convey the meaning of the magnitude (ratio units). May or may not come from a standard terminology. </xs:documentation>
             </xs:annotation>
-          </xs:element>        
+          </xs:element>
+          
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -542,7 +549,8 @@
   <xs:element name="denominator-units" type="mlhim2:DvStringType"/>    
   <xs:element name="ratio-units" type="mlhim2:DvStringType"/>  
   <xs:element name="DvRatio" substitutionGroup="mlhim2:DvQuantified mlhim2:DvOrdered mlhim2:DvAny" type="mlhim2:DvRatioType"/>
-    
+  
+  
   <xs:complexType name="DvTemporalType">
     <xs:annotation>
       <xs:documentation>Class defining the concept of date and time types. 
@@ -570,7 +578,9 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="DvTemporal" substitutionGroup="mlhim2:DvAny" type="mlhim2:DvTemporalType"/>
-
+  
+  
+  
   <xs:complexType name="DvIntervalType">
     <xs:annotation>
       <xs:documentation>Generic class defining an interval (i.e. range) of a comparable type. An interval is a contiguous
@@ -616,6 +626,7 @@
   </xs:complexType>
   <xs:element name="DvInterval" substitutionGroup="mlhim2:DvAny" type="mlhim2:DvIntervalType"/>
   
+  
   <xs:complexType name="ReferenceRangeType">
     <xs:annotation>
       <xs:documentation>Defines a named range to be associated with any ORDERED datum. Each such range is particular to the
@@ -640,7 +651,8 @@
             <xs:annotation>
               <xs:documentation>True if this reference range only contains values that are considered to be normal.</xs:documentation>
             </xs:annotation>
-          </xs:element> 
+          </xs:element>
+          
         </xs:sequence>
       </xs:extension>
     </xs:complexContent>
@@ -650,6 +662,8 @@
   
 
   <!--Common package types-->
+ 
+  
   <xs:complexType name="FeederAuditDetailsType">
     <xs:annotation>
       <xs:documentation>Audit details for any system in a feeder system chain. Audit details here means the general notion of
@@ -746,6 +760,42 @@
   <xs:element name="original-content" type="mlhim2:DvURIType"/>
   <xs:element name="FeederAudit" type="mlhim2:FeederAuditType"/>
   
+  
+  <xs:complexType abstract="true" name="LocatableType">
+    <xs:annotation>
+      <xs:documentation>Root class of all information model classes that can be located via links in a data instance.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" ref="mlhim2:links">
+        <xs:annotation>
+          <xs:documentation>Optional link(s) to other Locatable structures or external entities.</xs:documentation>
+        </xs:annotation>
+      </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:feeder-audit">
+        <xs:annotation>
+          <xs:documentation>Audit trail from the system of original commit of information forming the content of this node, or
+            from a conversion gateway which has synthesised this node. </xs:documentation>
+        </xs:annotation>
+      </xs:element>
+    </xs:sequence>
+  </xs:complexType>
+  <xs:element name="links" type="mlhim2:DvURIType"/>
+  <xs:element name="feeder-audit" type="mlhim2:FeederAuditType"/>
+  <xs:element abstract="true" name="Locatable" type="mlhim2:LocatableType"/>
+  
+  
+  <xs:complexType abstract="true" name="DefinitionType">
+    <xs:annotation>
+      <xs:documentation>Root class of all structural information model classes that can be expressed in a constraint model.
+        IOW: as the value of the CCD.definition attribute. </xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="mlhim2:LocatableType"/>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element abstract="true" name="Definition" substitutionGroup="mlhim2:Locatable" type="mlhim2:DefinitionType"/>
+  
   <xs:complexType abstract="true" name="PartyProxyType">
     <xs:annotation>
       <xs:documentation>Abstract concept of a proxy description of a party, including an optional link to data for this party
@@ -817,6 +867,8 @@
       <xs:documentation>Record an attestation by a party of item(s) of record content. The type of attestation is recorded by
         the reason attribute, which my be coded. </xs:documentation>
     </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="mlhim2:LocatableType">
         <xs:sequence>
           <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:attested-view">
             <xs:annotation>
@@ -849,12 +901,14 @@
             </xs:annotation>
           </xs:element>
         </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
   <xs:element name="attested-view" type="mlhim2:DvMediaType"/>
   <xs:element name="proof" type="mlhim2:DvParsableType"/>
   <xs:element name="reason" type="mlhim2:DvCodedStringType"/>
   <xs:element name="committer" type="mlhim2:PartyProxyType"/>
-  <xs:element name="Attestation" type="mlhim2:AttestationType"/>
+  <xs:element name="Attestation" substitutionGroup="mlhim2:Locatable" type="mlhim2:AttestationType"/>
   
   <xs:complexType name="ParticipationType">
     <xs:annotation>
@@ -1200,8 +1254,11 @@
     <xs:annotation>
       <xs:documentation>The abstract parent of Cluster and Element representation classes. </xs:documentation>
     </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="mlhim2:DefinitionType"/>
+    </xs:complexContent>
   </xs:complexType>
-  <xs:element abstract="true" name="Item" substitutionGroup="mlhim2:entry-data" type="mlhim2:ItemType"/>
+  <xs:element abstract="true" name="Item" substitutionGroup="mlhim2:Definition" type="mlhim2:ItemType"/>
   
   <xs:complexType name="ClusterType">
     <xs:annotation>
@@ -1226,7 +1283,7 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="items" type="mlhim2:ItemType"/>
-  <xs:element name="Cluster" substitutionGroup="mlhim2:Item" type="mlhim2:ClusterType"/>
+  <xs:element name="Cluster" substitutionGroup="mlhim2:Item mlhim2:Definition" type="mlhim2:ClusterType"/>
   
   <xs:complexType name="ElementType">
     <xs:annotation>
@@ -1245,7 +1302,7 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element name="Element-dv" type="mlhim2:DvAnyType"/>
-  <xs:element name="Element" substitutionGroup="mlhim2:Item" type="mlhim2:ElementType"/>
+  <xs:element name="Element" substitutionGroup="mlhim2:Item mlhim2:Definition" type="mlhim2:ElementType"/>
   
   <!--Content / entry types -->
   <xs:complexType abstract="true" name="EntryType">
@@ -1257,18 +1314,9 @@
         subtyping is used to allow persistence to separate the types of Entries; primarily import in healthcare for the
         de-identification of clinical information. </xs:documentation>
     </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="mlhim2:DefinitionType">
         <xs:sequence>
-          <xs:element maxOccurs="unbounded" minOccurs="0" ref="mlhim2:entry-links">
-            <xs:annotation>
-              <xs:documentation>Optional link(s) to other Locatable structures or external entities.</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element maxOccurs="1" minOccurs="0" ref="mlhim2:entry-audit">
-            <xs:annotation>
-              <xs:documentation>Audit trail from the system of original commit of information forming the content of this node, or
-                from a conversion gateway which has synthesised this node. </xs:documentation>
-            </xs:annotation>
-          </xs:element>
           <xs:element maxOccurs="1" minOccurs="1" name="language" type="xs:language" default="en-US">
             <xs:annotation>
               <xs:documentation>Mandatory indicator of the localised language in which this Entry is written. The ·value space· of
@@ -1327,9 +1375,9 @@
             </xs:annotation>
           </xs:element>
         </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
   </xs:complexType>
-  <xs:element name="entry-links" type="mlhim2:DvURIType"/>
-  <xs:element name="entry-audit" type="mlhim2:FeederAuditType"/>
   <xs:element name="entry-subject" type="mlhim2:PartyProxyType"/>
   <xs:element name="entry-provider" type="mlhim2:PartyProxyType"/>
   <xs:element name="other-participations" type="mlhim2:ParticipationType"/>
@@ -1337,7 +1385,7 @@
   <xs:element name="workflow-id" type="mlhim2:DvURIType"/>
   <xs:element name="attestation" type="mlhim2:AttestationType"/>
   <xs:element name="entry-data" type="mlhim2:ItemType"/>
-  <xs:element abstract="true" name="Entry" type="mlhim2:EntryType"/>
+  <xs:element abstract="true" name="Entry" substitutionGroup="mlhim2:Definition" type="mlhim2:EntryType"/>
   
   <xs:complexType name="CareEntryType">
     <xs:annotation>
@@ -1347,7 +1395,7 @@
       <xs:extension base="mlhim2:EntryType"/>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="CareEntry" substitutionGroup="mlhim2:Entry" type="mlhim2:CareEntryType"/>
+  <xs:element name="CareEntry" substitutionGroup="mlhim2:Entry mlhim2:Definition" type="mlhim2:CareEntryType"/>
   
   <xs:complexType name="AdminEntryType">
     <xs:annotation>
@@ -1360,7 +1408,7 @@
       <xs:extension base="mlhim2:EntryType"/>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="AdminEntry" substitutionGroup="mlhim2:Entry" type="mlhim2:AdminEntryType"/>
+  <xs:element name="AdminEntry" substitutionGroup="mlhim2:Entry mlhim2:Definition" type="mlhim2:AdminEntryType"/>
   
   <xs:complexType name="DemographicEntryType">
     <xs:annotation>
@@ -1372,7 +1420,8 @@
       <xs:extension base="mlhim2:EntryType"/>
     </xs:complexContent>
   </xs:complexType>
-  <xs:element name="DemographicEntry" substitutionGroup="mlhim2:Entry" type="mlhim2:DemographicEntryType"/>
+  <xs:element name="DemographicEntry" substitutionGroup="mlhim2:Entry mlhim2:Definition"
+    type="mlhim2:DemographicEntryType"/>
   
   
   <!--CCD / constraint model -->
@@ -1388,7 +1437,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="definition" type="mlhim2:EntryType"/>
+  <xs:element name="definition" substitutionGroup="mlhim2:Definition" type="mlhim2:DefinitionType"/>
   <xs:element name="CCD" type="mlhim2:CCDType"/>
   
 </xs:schema>
