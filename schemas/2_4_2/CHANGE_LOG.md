@@ -20,6 +20,10 @@ the numerator unit is 'A', the denominator unit is 'B', and the ratio unit is kn
 confusion in modelling and has no real purpose in MLHIM. Allowing zero to unbounded numbers of reference-ranges is necessary in many cases and each 
 reference range needs its own semantics, independent of the MLHIM RM.
  
+ 7. Include a boolean in ReferenceRange to indicate if this is a normal range.  The name is, 'is-normal'._
+ 
+ 8. Remove Locatable and Definition and simplify the model by making all CCD.defintions an Entry. No need for Cluster or Element CCDs now, since PCTs are designed to be re-usable._
+ 
  
  
  
@@ -42,5 +46,7 @@ the numerator unit is 'A', the denominator unit is 'B', and the ratio unit is kn
 confusion in modelling and has no real purpose in MLHIM. Allowing zero to unbounded numbers of reference-ranges is necessary in many cases and each 
 reference range needs its own semantics, independent of the MLHIM RM._
  
- 7. Include a boolean in ReferenceRange to indicate if this is a normal range.  The name is, 'is-normal'. 
+ 7. _Include a boolean in ReferenceRange to indicate if this is a normal range.  The name is, 'is-normal'._
+ 
+ 8. _Remove Locatable and Definition and simplify the model by making all CCD.defintions an Entry. No need for Cluster or Element CCDs now, since PCTs are designed to be re-usable._
  
