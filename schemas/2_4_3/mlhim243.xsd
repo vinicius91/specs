@@ -1239,6 +1239,26 @@
   <xs:element name="Element-dv" type="mlhim243:DvAnyType"/>
   <xs:element name="Element" substitutionGroup="mlhim243:Item" type="mlhim243:ElementType"/>
   
+  <!-- Replacement for ElementType -->
+  <xs:complexType name="DvAdapterType">
+    <xs:annotation>
+      <xs:documentation>The leaf variant of Item, to which any DvAny subtype instance is attached for use in a Cluster.</xs:documentation>
+    </xs:annotation>
+    <xs:complexContent>
+      <xs:extension base="mlhim243:ItemType">
+        <xs:sequence>
+          <xs:element maxOccurs="1" minOccurs="1" ref="mlhim243:DvAdapter-dv">
+            <xs:annotation>
+              <xs:documentation>Data value type of this leaf.</xs:documentation>
+            </xs:annotation>
+          </xs:element>
+        </xs:sequence>
+      </xs:extension>
+    </xs:complexContent>
+  </xs:complexType>
+  <xs:element name="DvAdapter-dv" type="mlhim243:DvAnyType"/>
+  <xs:element name="DvAdapter" substitutionGroup="mlhim243:Item" type="mlhim243:DvAdapterType"/>
+  
   <!--Content / entry types -->
   <xs:complexType abstract="true" name="EntryType">
     <xs:annotation>
