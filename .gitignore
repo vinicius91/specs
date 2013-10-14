@@ -48,3 +48,9 @@ nosetests.xml
 #oXygen
 *.xpr
 
+#misc.
+graphics/Vinheta MLHIM/*
+mlhim-ref-man*.pdf
+mlhim-ref-man*.zip
+
+
