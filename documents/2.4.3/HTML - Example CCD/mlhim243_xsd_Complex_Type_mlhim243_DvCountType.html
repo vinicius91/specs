@@ -411,7 +411,7 @@ var modelBoxes= new Array('model_DvCountType');
                                     </tr>
                                  </thead>
                                  <tr>
-                                    <td class="firstColumn">round(mlhim243:magnitude)</td>
+                                    <td class="firstColumn">(if(mlhim243:magnitude mod 1 = 0) then true() else false())</td>
                                     <td width="10%"></td>
                                     <td width="10%">
                                        <div class="annotation"></div>
@@ -443,7 +443,7 @@ var modelBoxes= new Array('model_DvCountType');
           </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
         </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
       </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
-      </span><span class="tEl">&lt;xs:assert</span><span class="tAN"> test=</span><span class="tAV">"round(mlhim243:magnitude)"</span><span class="tEl">/&gt;</span><span class="tI">
+      </span><span class="tEl">&lt;xs:assert</span><span class="tAN"> test=</span><span class="tAV">"(if(mlhim243:magnitude mod 1 = 0) then true() else false())"</span><span class="tEl">/&gt;</span><span class="tI">
     </span><span class="tEl">&lt;/xs:extension&gt;</span><span class="tI">
   </span><span class="tEl">&lt;/xs:complexContent&gt;</span><span class="tI">
 </span><span class="tEl">&lt;/xs:complexType&gt;</span></pre></td>

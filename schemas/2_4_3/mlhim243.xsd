@@ -67,7 +67,6 @@
             </xs:annotation>
           </xs:element>
         </xs:sequence>
-        <xs:assert test='string-length(@DvBoolean-dv) > 0 or @ev'/> <!-- An example assert -->
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -395,7 +394,7 @@
                 •
                 “~” : value is approximately magnitude
                 If not selected, defaults to “=”.-->
-                The restriction code in the comment below may be used in CCDs.
+                The restriction code in the comment below must be used in CCDs.
               </xs:documentation>
             </xs:annotation>
 <!--            <xs:simpleType>
@@ -443,7 +442,7 @@
             </xs:annotation>
           </xs:element>
         </xs:sequence>
-        <xs:assert test="round(mlhim243:magnitude)"></xs:assert>
+        <xs:assert test="(if(mlhim243:magnitude mod 1 = 0) then true() else false())"></xs:assert>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>

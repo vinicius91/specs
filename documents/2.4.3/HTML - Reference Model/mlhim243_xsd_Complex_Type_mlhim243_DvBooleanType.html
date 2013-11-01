@@ -22,7 +22,6 @@ var annotationBoxes= new Array('annotations_DvBooleanType_valid-trues',
 				'annotations_DvBooleanType_valid-falses', 
 				'annotations_DvBooleanType_DvBoolean-dv', 
 				'annotations_DvBooleanType');
-var assertsBoxes= new Array('asserts_DvBooleanType');
 var modelBoxes= new Array('model_DvBooleanType');
 
       
@@ -270,9 +269,6 @@ var modelBoxes= new Array('model_DvBooleanType');
                   <table>
                      <tr>
                         <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, annotationBoxes);" class="control" /></span><span class="globalControlName">Annotations</span></td>
-                     </tr>
-                     <tr>
-                        <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, assertsBoxes);" class="control" /></span><span class="globalControlName">Asserts </span></td>
                      </tr>
                      <tr>
                         <td><span><input type="checkbox" value="-" checked="checked" onclick="switchStateForAll(this, diagramBoxes);" class="control" /></span><span class="globalControlName">Diagrams</span></td>
@@ -661,9 +657,9 @@ var modelBoxes= new Array('model_DvBooleanType');
                                  <area alt="mlhim243_xsd_Complex_Type_mlhim243_DvAnyType.tmp#DvAnyType_valid-time-begin" href="mlhim243_xsd_Complex_Type_mlhim243_DvAnyType.html#DvAnyType_valid-time-begin" coords="366,248,509,292" />
                                  <area alt="mlhim243_xsd_Complex_Type_mlhim243_DvAnyType.tmp#DvAnyType_valid-time-end" href="mlhim243_xsd_Complex_Type_mlhim243_DvAnyType.html#DvAnyType_valid-time-end" coords="366,361,509,405" />
                                  <area alt="mlhim243_xsd_Complex_Type_mlhim243_DvAnyType.tmp#DvAnyType" href="mlhim243_xsd_Complex_Type_mlhim243_DvAnyType.html#DvAnyType" coords="284,3,575,44" />
-                                 <area alt="mlhim243_xsd_Complex_Type_mlhim243_DvBooleanType.tmp#DvBooleanType_valid-trues" href="mlhim243_xsd_Complex_Type_mlhim243_DvBooleanType.html#DvBooleanType_valid-trues" coords="352,579,473,623" />
-                                 <area alt="mlhim243_xsd_Complex_Type_mlhim243_DvBooleanType.tmp#DvBooleanType_valid-falses" href="mlhim243_xsd_Complex_Type_mlhim243_DvBooleanType.html#DvBooleanType_valid-falses" coords="352,678,473,722" />
-                                 <area alt="mlhim243_xsd_Complex_Type_mlhim243_DvBooleanType.tmp#DvBooleanType_DvBoolean-dv" href="mlhim243_xsd_Complex_Type_mlhim243_DvBooleanType.html#DvBooleanType_DvBoolean-dv" coords="352,777,473,821" /></map></div>
+                                 <area alt="mlhim243_xsd_Complex_Type_mlhim243_DvBooleanType.tmp#DvBooleanType_valid-trues" href="mlhim243_xsd_Complex_Type_mlhim243_DvBooleanType.html#DvBooleanType_valid-trues" coords="352,498,473,542" />
+                                 <area alt="mlhim243_xsd_Complex_Type_mlhim243_DvBooleanType.tmp#DvBooleanType_valid-falses" href="mlhim243_xsd_Complex_Type_mlhim243_DvBooleanType.html#DvBooleanType_valid-falses" coords="352,597,473,641" />
+                                 <area alt="mlhim243_xsd_Complex_Type_mlhim243_DvBooleanType.tmp#DvBooleanType_DvBoolean-dv" href="mlhim243_xsd_Complex_Type_mlhim243_DvBooleanType.html#DvBooleanType_DvBoolean-dv" coords="352,696,473,740" /></map></div>
                         </td>
                      </tr>
                      <tr>
@@ -710,32 +706,6 @@ var modelBoxes= new Array('model_DvBooleanType');
                      </tr>
                      <tr>
                         <td class="firstColumn">
-                           <div class="floatLeft"><b>Asserts</b></div>
-                           <div class="floatRight"><input id="button_asserts_DvBooleanType" type="image" src="img/btM.gif" value="-" onclick="switchState('asserts_DvBooleanType');" class="control" /></div>
-                        </td>
-                        <td>
-                           <div id="asserts_DvBooleanType" style="display:block">
-                              <table class="attributesTable">
-                                 <thead>
-                                    <tr>
-                                       <th>Test</th>
-                                       <th>XPath default namespace</th>
-                                       <th>Annotation</th>
-                                    </tr>
-                                 </thead>
-                                 <tr>
-                                    <td class="firstColumn">string-length(@DvBoolean-dv) &gt; 0 or @ev</td>
-                                    <td width="10%"></td>
-                                    <td width="10%">
-                                       <div class="annotation"></div>
-                                    </td>
-                                 </tr>
-                              </table>
-                           </div>
-                        </td>
-                     </tr>
-                     <tr>
-                        <td class="firstColumn">
                            <div class="floatLeft"><b>Source</b></div>
                            <div class="floatRight"><input id="button_source_DvBooleanType" type="image" src="img/btM.gif" value="-" onclick="switchState('source_DvBooleanType');" class="control" /></div>
                         </td>
@@ -766,8 +736,6 @@ var modelBoxes= new Array('model_DvBooleanType');
           </span><span class="tEl">&lt;/xs:annotation&gt;</span><span class="tI">
         </span><span class="tEl">&lt;/xs:element&gt;</span><span class="tI">
       </span><span class="tEl">&lt;/xs:sequence&gt;</span><span class="tI">
-      </span><span class="tEl">&lt;xs:assert</span><span class="tAN"> test=</span><span class="tAV">"string-length(@DvBoolean-dv) &gt; 0 or @ev"</span><span class="tEl">/&gt;</span><span class="tI">
-      </span><span class="tC">&lt;!-- An example assert --&gt;</span><span class="tI">
     </span><span class="tEl">&lt;/xs:extension&gt;</span><span class="tI">
   </span><span class="tEl">&lt;/xs:complexContent&gt;</span><span class="tI">
 </span><span class="tEl">&lt;/xs:complexType&gt;</span></pre></td>
