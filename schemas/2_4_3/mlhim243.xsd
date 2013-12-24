@@ -22,12 +22,12 @@
           <xs:documentation>The exceptional value. Often referred to as Null Flavour. </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" name="valid-time-begin" type="xs:dateTime">
+      <xs:element maxOccurs="1" minOccurs="0" name="valid-time-begin" type="xs:dateTime" nillable="true">
         <xs:annotation>
           <xs:documentation>If present this must be a valid datetime including timezone. It is used to indicate the beginning time that information is considered valid or when the information was collected.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" name="valid-time-end" type="xs:dateTime">
+      <xs:element maxOccurs="1" minOccurs="0" name="valid-time-end" type="xs:dateTime" nillable="true">
         <xs:annotation>
           <xs:documentation>If present this must be a valid datetime including timezone</xs:documentation>
         </xs:annotation>
