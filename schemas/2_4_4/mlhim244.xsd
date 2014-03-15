@@ -3,7 +3,8 @@
   xmlns:mlhim243="http://www.mlhim.org/xmlns/mlhim2/2_4_3"
   id="mlhim2-2_4_3"
   attributeFormDefault="qualified" elementFormDefault="qualified"
-  targetNamespace="http://www.mlhim.org/xmlns/mlhim2/2_4_3" version="2.4.3">
+  targetNamespace="http://www.mlhim.org/xmlns/mlhim2/2_4_3" version="2.4.3"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
   
   <!--Datatypes package-->
   
@@ -22,12 +23,12 @@
           <xs:documentation>The exceptional value. Often referred to as Null Flavour. </xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" name="valid-time-begin" type="xs:dateTime">
+      <xs:element maxOccurs="1" minOccurs="0" name="valid-time-begin" type="xs:dateTime" nillable="true">
         <xs:annotation>
           <xs:documentation>If present this must be a valid datetime including timezone. It is used to indicate the beginning time that information is considered valid or when the information was collected.</xs:documentation>
         </xs:annotation>
       </xs:element>
-      <xs:element maxOccurs="1" minOccurs="0" name="valid-time-end" type="xs:dateTime">
+      <xs:element maxOccurs="1" minOccurs="0" name="valid-time-end" type="xs:dateTime" nillable="true">
         <xs:annotation>
           <xs:documentation>If present this must be a valid datetime including timezone</xs:documentation>
         </xs:annotation>
@@ -67,7 +68,6 @@
             </xs:annotation>
           </xs:element>
         </xs:sequence>
-        <xs:assert test='string-length(@DvBoolean-dv) > 0 or @ev'/> <!-- An example assert -->
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -395,10 +395,11 @@
                 •
                 “~” : value is approximately magnitude
                 If not selected, defaults to “=”.-->
-                The restriction code in the comment below may be used in CCDs.
-              </xs:documentation>
-            </xs:annotation>
-<!--            <xs:simpleType>
+                
+                The restriction code in the comment below must be used in CCDs.
+                
+              <!--
+              <xs:simpleType>
               <xs:restriction base="xs:string">
                 <xs:enumeration value="="/>
                 <xs:enumeration value="&lt;"/>
@@ -407,8 +408,12 @@
                 <xs:enumeration value="&gt;="/>
                 <xs:enumeration value="~"/>
               </xs:restriction>  
-            </xs:simpleType>  
--->          </xs:element>
+             </xs:simpleType>  
+             -->
+                
+              </xs:documentation>
+            </xs:annotation>
+          </xs:element>
           <xs:element maxOccurs="1" minOccurs="0" name="error" default="0" type="xs:int">
             <xs:annotation>
               <xs:documentation>Error margin of measurement, indicating error in the recording method or instrument (+/- %).
@@ -443,7 +448,7 @@
             </xs:annotation>
           </xs:element>
         </xs:sequence>
-        <xs:assert test="round(mlhim243:magnitude)"></xs:assert>
+        <xs:assert test="(if(mlhim243:magnitude mod 1 = 0) then true() else false())"></xs:assert>
       </xs:extension>
     </xs:complexContent>
   </xs:complexType>
@@ -916,7 +921,7 @@
         <xs:sequence>
           <xs:element fixed="No Information" maxOccurs="1" minOccurs="1" name="ev-name" type="xs:string"/>
           <xs:element
-            default="The value is exceptional (missing, omitted, incomplete, improper). No information as to the reason for being an exceptional value is provided. This is the most general exceptional value. It is also the default exceptional value "
+            default="The value is exceptional (missing, omitted, incomplete, improper). No information as to the reason for being an exceptional value is provided. This is the most general exceptional value. It is also the default exceptional value."
             maxOccurs="1" minOccurs="1" name="ev-meaning" type="xs:string"/>
         </xs:sequence>
       </xs:restriction>
@@ -992,7 +997,7 @@
         <xs:sequence>
           <xs:element fixed="Unencoded" maxOccurs="1" minOccurs="1" name="ev-name" type="xs:string"/>
           <xs:element
-            default="No attempt has been made to encode the information correctly but the raw source information is represented, usually in free text"
+            default="No attempt has been made to encode the information correctly but the raw source information is represented, usually in free text."
             maxOccurs="1" minOccurs="1" name="ev-meaning" type="xs:string"/>
         </xs:sequence>
       </xs:restriction>
@@ -1010,7 +1015,7 @@
         <xs:sequence>
           <xs:element fixed="Other" maxOccurs="1" minOccurs="1" name="ev-name" type="xs:string"/>
           <xs:element
-            default="The actual value is not a member of the permitted data values in the variable. (e.g., when the value of the variable is not  by the coding system) "
+            default="The actual value is not a member of the permitted data values in the variable. (e.g., when the value of the variable is not  by the coding system)."
             maxOccurs="1" minOccurs="1" name="ev-meaning" type="xs:string"/>
         </xs:sequence>
       </xs:restriction>
@@ -1026,7 +1031,7 @@
         </xs:annotation>
         <xs:sequence>
           <xs:element fixed="Negative Infinity" maxOccurs="1" minOccurs="1" name="ev-name" type="xs:string"/>
-          <xs:element default="Negative infinity of numbers" maxOccurs="1" minOccurs="1" name="ev-meaning" type="xs:string"/>
+          <xs:element default="Negative infinity of numbers." maxOccurs="1" minOccurs="1" name="ev-meaning" type="xs:string"/>
         </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
@@ -1042,7 +1047,7 @@
         </xs:annotation>
         <xs:sequence>
           <xs:element fixed="Positive Infinity" maxOccurs="1" minOccurs="1" name="ev-name" type="xs:string"/>
-          <xs:element default="Positive infinity of numbers" maxOccurs="1" minOccurs="1" name="ev-meaning" type="xs:string"/>
+          <xs:element default="Positive infinity of numbers." maxOccurs="1" minOccurs="1" name="ev-meaning" type="xs:string"/>
         </xs:sequence>
       </xs:restriction>
     </xs:complexContent>
@@ -1057,7 +1062,7 @@
         </xs:annotation>
         <xs:sequence>
           <xs:element fixed="Unknown" maxOccurs="1" minOccurs="1" name="ev-name" type="xs:string"/>
-          <xs:element default="A proper value is applicable, but not known" maxOccurs="1" minOccurs="1" name="ev-meaning"
+          <xs:element default="A proper value is applicable, but not known." maxOccurs="1" minOccurs="1" name="ev-meaning"
             type="xs:string"/>
         </xs:sequence>
       </xs:restriction>
@@ -1074,7 +1079,7 @@
         </xs:annotation>
         <xs:sequence>
           <xs:element fixed="Asked and Refused" maxOccurs="1" minOccurs="1" name="ev-name" type="xs:string"/>
-          <xs:element default="Information was sought but refused to be provided (e.g., patient was asked but refused to answer)"
+          <xs:element default="Information was sought but refused to be provided (e.g., patient was asked but refused to answer)."
             maxOccurs="1" minOccurs="1" name="ev-meaning" type="xs:string"/>
         </xs:sequence>
       </xs:restriction>
@@ -1177,7 +1182,7 @@
         <xs:sequence>
           <xs:element fixed="Not Applicable" maxOccurs="1" minOccurs="1" name="ev-name" type="xs:string"/>
           <xs:element
-            default="No proper value is applicable in this context e.g.,the number of cigarrettes smoked per day by a non-smoker subject."
+            default="No proper value is applicable in this context e.g.,the number of cigarettes smoked per day by a non-smoker subject."
             maxOccurs="1" minOccurs="1" name="ev-meaning" type="xs:string"/>
         </xs:sequence>
       </xs:restriction>
