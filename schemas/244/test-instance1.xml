@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ccd:ccd-ad42015c-b013-4ea4-9df3-957799a552b5 xmlns:mlhim244="http://www.mlhim.org/xmlns/mlhim2/244" xmlns:ccd="http://www.ccdgen.com/ccdlib/ccd-ad42015c-b013-4ea4-9df3-957799a552b5" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+  xmlns:owl="http://www.w3.org/2002/07/owl#" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:sawsdl="http://www.w3.org/ns/sawsdl" xmlns:sawsdlrdf="http://www.w3.org/ns/sawsdl#" xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://www.ccdgen.com/ccdlib/ccd-ad42015c-b013-4ea4-9df3-957799a552b5 file:/home/tim/MLHIM/git/specs/schemas/244/test-ns-ccd244.xsd">
+  <ccd:el-8ade4e59-da31-480c-858d-fef4ea268324>
+    <language>en-US</language>
+    <encoding>utf-8</encoding>
+    <ccd:el-83cfaa04-2563-43c0-8411-5a3adc7b12b4>
+      <party-name>Self</party-name>
+    </ccd:el-83cfaa04-2563-43c0-8411-5a3adc7b12b4>
+    <ccd:el-83fc62c8-8df8-472a-b590-d8ecea82d695>
+      <party-name>KNvv.HS2pHBnHzRmW.aff0L</party-name>
+    </ccd:el-83fc62c8-8df8-472a-b590-d8ecea82d695>
+    <ccd:el-49097b13-6f96-497a-94b7-4734e041d479>
+      <cluster-subject>Diabetes: Initial Evaluation</cluster-subject>
+      <ccd:el-b1e133e6-ced7-4c0d-812d-e7ce8ed5c5b5>
+        <cluster-subject>Glucose tests</cluster-subject>
+        <ccd:el-74b0f398-6176-43cb-8895-56addf78fd82>
+          <ccd:el-42a259da-69f3-4289-98f4-e6d2a2d84b02>
+            <data-name>Casual glucose test</data-name>
+            <magnitude>768</magnitude>
+            <error>0</error>
+            <accuracy>0</accuracy>
+            <ccd:el-5d7de0f1-4585-49d1-9282-592199180f32>
+              <data-name>Miligrams per deciliter</data-name>
+              <DvString-dv>mg/dl</DvString-dv>
+            </ccd:el-5d7de0f1-4585-49d1-9282-592199180f32>
+          </ccd:el-42a259da-69f3-4289-98f4-e6d2a2d84b02>
+        </ccd:el-74b0f398-6176-43cb-8895-56addf78fd82>
+        <ccd:el-2ed53e7c-df94-443b-8a7f-51531c43231f>
+          <ccd:el-a781fc4d-24be-488f-aedd-8adfd3b9c2c7>
+            <data-name>Fasting glucose test</data-name>
+            <magnitude>76.6</magnitude>
+            <error>0</error>
+            <accuracy>0</accuracy>
+            <ccd:el-5d7de0f1-4585-49d1-9282-592199180f32>
+              <data-name>Miligrams per deciliter</data-name>
+              <DvString-dv>mg/dl</DvString-dv>
+            </ccd:el-5d7de0f1-4585-49d1-9282-592199180f32>
+          </ccd:el-a781fc4d-24be-488f-aedd-8adfd3b9c2c7>
+        </ccd:el-2ed53e7c-df94-443b-8a7f-51531c43231f>
+        <ccd:el-76e9ead3-384c-414d-909f-e78f0f3889b7>
+          <ccd:el-3d6ce3e6-a7a7-4501-af45-c0d2c4174695>
+            <data-name>Glucose tolerance test</data-name>
+            <magnitude>799</magnitude>
+            <error>0</error>
+            <accuracy>0</accuracy>
+            <ccd:el-5d7de0f1-4585-49d1-9282-592199180f32>
+              <data-name>Miligrams per deciliter</data-name>
+              <DvString-dv>mg/dl</DvString-dv>
+            </ccd:el-5d7de0f1-4585-49d1-9282-592199180f32>
+          </ccd:el-3d6ce3e6-a7a7-4501-af45-c0d2c4174695>
+        </ccd:el-76e9ead3-384c-414d-909f-e78f0f3889b7>
+      </ccd:el-b1e133e6-ced7-4c0d-812d-e7ce8ed5c5b5>
+      <ccd:el-7bbe4ab2-d4fc-4061-a2a5-72b916e4de29>
+        <ccd:el-12a854d5-53e7-4109-8cfb-ae944dab1d52>
+          <data-name>HbA1c</data-name>
+          <magnitude>87.6</magnitude>
+          <error>0</error>
+          <accuracy>0</accuracy>
+          <ccd:el-2d9c024f-24cf-41df-ad21-d1953fed58be>
+            <data-name>Percentage</data-name>
+            <DvString-dv>%</DvString-dv>
+          </ccd:el-2d9c024f-24cf-41df-ad21-d1953fed58be>
+        </ccd:el-12a854d5-53e7-4109-8cfb-ae944dab1d52>
+      </ccd:el-7bbe4ab2-d4fc-4061-a2a5-72b916e4de29>
+    </ccd:el-49097b13-6f96-497a-94b7-4734e041d479>
+  </ccd:el-8ade4e59-da31-480c-858d-fef4ea268324>
+</ccd:ccd-ad42015c-b013-4ea4-9df3-957799a552b5>
