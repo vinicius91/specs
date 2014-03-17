@@ -1578,8 +1578,6 @@ Examples:
       </xs:complexContent>
     </xs:complexType>
 
-
-
   <xs:complexType name='ct-9ae029c9-dc37-4d1d-8f88-3534af74fe8c' xml:lang='en-US'> <!-- Casual glucose test: &lt; 200mg/dl -->
     <xs:complexContent>
       <xs:restriction base='mlhim244:DvIntervalType'>
@@ -1588,18 +1586,28 @@ Examples:
           <xs:element maxOccurs='1' minOccurs='0' ref='mlhim244:ExceptionalValue'/>
           <xs:element maxOccurs='1' minOccurs='0' name='valid-time-begin' type='xs:dateTime'/>
           <xs:element maxOccurs='1' minOccurs='0' name='valid-time-end' type='xs:dateTime'/>
-          <xs:element maxOccurs='1' minOccurs='1' name='lower' type='xs:decimal' fixed='0'/>
-          <xs:element maxOccurs='1' minOccurs='1'  name='upper' type='xs:decimal' fixed='200'/>
-          <xs:element maxOccurs='1' minOccurs='1' name='lower-included' type='xs:boolean' fixed='true'/>
-          <xs:element maxOccurs='1' minOccurs='1' name='upper-included' type='xs:boolean' fixed='true'/>
-          <xs:element maxOccurs='1' minOccurs='1' name='lower-bounded' type='xs:boolean' fixed='true'/>
-          <xs:element maxOccurs='1' minOccurs='1' name='upper-bounded'  type='xs:boolean' fixed='true'/>
+          <xs:element maxOccurs='1' minOccurs='1' name='interval' type='ccd:ct-6e6e8c6f-3b44-477f-a1f4-9d029eb73985'/>          
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>
     </xs:complexType>
-
-
+  
+  <xs:complexType name='ct-6e6e8c6f-3b44-477f-a1f4-9d029eb73985'>
+    <xs:complexContent>
+      <xs:restriction base="mlhim244:interval-type">
+        <xs:sequence>
+          <xs:element name="decimal-interval">
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="200"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
 
   <xs:complexType name='ct-6e6e8c6f-3b44-477f-a1f4-9d029eb73974' xml:lang='en-US'> <!-- Casual glucose test: &gt;= 200mg/dl -->
     <xs:complexContent>

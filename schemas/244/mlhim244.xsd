@@ -4,16 +4,18 @@
   <xs:annotation>
     <xs:documentation>
     This is the Multi-Level Healthcare Information Modelling (MLHIM) project reference model implementation in XML Schema 1.1.
-    It consists of the core datatypes for MLHIM models, called Concept Constraint Definitions (CCDs).
-    Further documentation and implementation instructions ca be found on or via links from http://www.mlhim.org
+    It consists of the core datatypes and structures for MLHIM models, called Concept Constraint Definitions (CCDs).
+    Further documentation and implementation instructions can be found on or via links from http://www.mlhim.org
+    
+    The abbreviations 'Dv' and 'dv' in the complexType and element names refer to the words; Data Value. 
   </xs:documentation>
     <xs:appinfo>
       <rdf:Description rdf:about="http://www.mlhim.org/xmlns/mlhim2/244">
         <rdf:isDefinedBy rdf:resource="http://www.mlhim.org"/>
       </rdf:Description>
     </xs:appinfo>
-
   </xs:annotation>
+  
   <!--Datatypes package-->
 
   <xs:complexType abstract="true" name="DvAnyType">
@@ -385,7 +387,7 @@
               <xs:documentation>Numeric value of the quantity in canonical (i.e. single value) form.</xs:documentation>
             </xs:annotation>
           </xs:element>
-          <xs:element maxOccurs="1" minOccurs="0" name="magnitude-status">
+          <xs:element maxOccurs="1" minOccurs="0" ref="mlhim244:magnitude-status">
             <xs:annotation>
               <xs:documentation>
                 <!-- Optional status of magnitude with values:
@@ -401,20 +403,10 @@
                 “>=” : value is >= magnitude
                 
                 “~” : value is the approximate magnitude
+                           
              -->
               </xs:documentation>
             </xs:annotation>
-            <xs:simpleType>
-              <xs:restriction base="xs:string">
-                <xs:enumeration value="="/>
-                <xs:enumeration value="&lt;"/>
-                <xs:enumeration value="&gt;"/>
-                <xs:enumeration value="&lt;="/>
-                <xs:enumeration value="&gt;="/>
-                <xs:enumeration value="~"/>
-              </xs:restriction>
-            </xs:simpleType>
-
           </xs:element>
           <xs:element maxOccurs="1" minOccurs="0" name="error" type="xs:int">
             <xs:annotation>
@@ -424,8 +416,7 @@
           </xs:element>
           <xs:element maxOccurs="1" minOccurs="0" name="accuracy" type="xs:decimal">
             <xs:annotation>
-              <xs:documentation>Accuracy of the value in the magnitude attribute. 0% to +/- 100% A value of 0 means that the accuracy
-                is unknown.</xs:documentation>
+              <xs:documentation>Accuracy of the value in the magnitude attribute. 0% to +/- 100% A value of 0 means that the accuracy is unknown.</xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -433,7 +424,18 @@
     </xs:complexContent>
   </xs:complexType>
   <xs:element abstract="true" name="DvQuantified" substitutionGroup="mlhim244:DvOrdered mlhim244:DvAny" type="mlhim244:DvQuantifiedType"/>
-
+  <xs:element name="magnitude-status">
+  <xs:simpleType>
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="="/>
+      <xs:enumeration value="&lt;"/>
+      <xs:enumeration value="&gt;"/>
+      <xs:enumeration value="&lt;="/>
+      <xs:enumeration value="&gt;="/>
+      <xs:enumeration value="~"/>
+    </xs:restriction>
+  </xs:simpleType>                
+  </xs:element>
 
 
   <xs:complexType name="DvCountType">
@@ -494,7 +496,7 @@
     <xs:complexContent>
       <xs:extension base="mlhim244:DvQuantifiedType">
         <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="1" name="ratio-type" type="xs:string">
+          <xs:element maxOccurs="1" minOccurs="1" ref="mlhim244:ratio-type">
             <xs:annotation>
               <xs:documentation>
                 Indicates semantic type of ratio  must be set as fixed to one of the below strings in CCDs.
@@ -543,7 +545,17 @@
   <xs:element name="denominator-units" type="mlhim244:DvStringType"/>
   <xs:element name="ratio-units" type="mlhim244:DvStringType"/>
   <xs:element name="DvRatio" substitutionGroup="mlhim244:DvQuantified mlhim244:DvOrdered mlhim244:DvAny" type="mlhim244:DvRatioType"/>
-
+  <xs:element name="ratio-type">
+    <xs:simpleType>
+      <xs:restriction base='xs:string'>
+        <xs:enumeration value='ratio'/>
+        <xs:enumeration value='proportion'/>
+        <xs:enumeration value='rate'/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  
+  
   <xs:complexType name="DvTemporalType">
     <xs:annotation>
       <xs:documentation>Class defining the concept of date and time types. 
@@ -575,72 +587,16 @@
   <xs:complexType name="DvIntervalType">
     <xs:annotation>
       <xs:documentation>Generic class defining an interval (i.e. range) of a comparable type. An interval is a contiguous
-        subrange of a comparable base type. Used to define intervals of dates, times, quantities Whose units of measure match
-        and datatypes are the same and are ordered. TODO:This type should have an assert to validate that both upper and lower are the same datatype.</xs:documentation>
+        subrange of a comparable base type. Used to define intervals of dates, times, quantities, etc. Whose datatypes are the same and are ordered.</xs:documentation>
     </xs:annotation>
     <xs:complexContent>
       <xs:extension base="mlhim244:DvAnyType">
         <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="1" name="lower">
+          <xs:element maxOccurs="1" minOccurs="1" name="interval" type="mlhim244:interval-type">
             <xs:annotation>
-              <xs:documentation>lower value </xs:documentation>
-            </xs:annotation>
-            <xs:complexType>
-              <xs:annotation>
-                <xs:documentation>
-                  Choose the typed element for the lower value of the interval.
-                </xs:documentation>
-              </xs:annotation>
-              <xs:choice>
-                <xs:element name="lower-int" type="xs:int"/>
-                <xs:element name="lower-decimal" type="xs:decimal"/>
-                <xs:element name="lower-float" type="xs:float"/>
-                <xs:element name="lower-date" type="xs:date"/>
-                <xs:element name="lower-datetime" type="xs:dateTime"/>
-                <xs:element name="lower-time" type="xs:time"/>
-                <xs:element name="lower-duration" type="xs:duration"/>
-              </xs:choice>
-            </xs:complexType>
-          </xs:element>
-          <xs:element maxOccurs="1" minOccurs="1" name="upper">
-            <xs:annotation>
-              <xs:documentation>upper value</xs:documentation>
-            </xs:annotation>
-            <xs:complexType>
-              <xs:annotation>
-                <xs:documentation>
-                  Choose the typed element for the upper value of the interval.
-                </xs:documentation>
-              </xs:annotation>
-              <xs:choice>
-                <xs:element name="upper-int" type="xs:int"/>
-                <xs:element name="upper-decimal" type="xs:decimal"/>
-                <xs:element name="upper-float" type="xs:float"/>
-                <xs:element name="upper-date" type="xs:date"/>
-                <xs:element name="upper-datetime" type="xs:dateTime"/>
-                <xs:element name="upper-time" type="xs:time"/>
-                <xs:element name="upper-duration" type="xs:duration"/>
-              </xs:choice>
-            </xs:complexType>
-          </xs:element>
-          <xs:element maxOccurs="1" minOccurs="1" name="lower-included" type="xs:boolean">
-            <xs:annotation>
-              <xs:documentation>is lower included in interval </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element maxOccurs="1" minOccurs="1" name="upper-included" type="xs:boolean">
-            <xs:annotation>
-              <xs:documentation>is upper included in interval </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element maxOccurs="1" minOccurs="1" name="lower-bounded" type="xs:boolean">
-            <xs:annotation>
-              <xs:documentation>is lower bounded</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-          <xs:element maxOccurs="1" minOccurs="1" name="upper-bounded" type="xs:boolean">
-            <xs:annotation>
-              <xs:documentation>is upper bounded </xs:documentation>
+              <xs:documentation>
+                Defines the interval. The interval values are bound or unbounded and must be defined in a CCD using a combination of min and max inclusive and exclusive restrictions. 
+              </xs:documentation>
             </xs:annotation>
           </xs:element>
         </xs:sequence>
@@ -649,6 +605,23 @@
   </xs:complexType>
   <xs:element name="DvInterval" substitutionGroup="mlhim244:DvAny" type="mlhim244:DvIntervalType"/>
 
+  <xs:complexType name="interval-type">
+    <xs:annotation>
+      <xs:documentation>
+        Choose the typed element of the interval.
+      </xs:documentation>
+    </xs:annotation>
+    <xs:choice minOccurs="1" maxOccurs="1">
+      <xs:element name="int-interval" type="xs:int"/>
+      <xs:element name="decimal-interval" type="xs:decimal"/>
+      <xs:element name="float-interval" type="xs:float"/>
+      <xs:element name="date-interval" type="xs:date"/>
+      <xs:element name="datetime-interval" type="xs:dateTime"/>
+      <xs:element name="time-interval" type="xs:time"/>
+      <xs:element name="duration-interval" type="xs:duration"/>
+    </xs:choice>
+  </xs:complexType>
+  
   <xs:complexType name="ReferenceRangeType">
     <xs:annotation>
       <xs:documentation>

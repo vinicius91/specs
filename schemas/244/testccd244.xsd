@@ -2374,18 +2374,8 @@ functionally related to:
           <xs:element maxOccurs='1' minOccurs='0' ref='mlhim244:reference-ranges'/>
           <xs:element maxOccurs='1' minOccurs='0' name='normal-status' type='xs:string' default=''/> 
           <xs:element maxOccurs='1' minOccurs='1'  name='magnitude' type='xs:decimal'/>
-          <xs:element maxOccurs='1' minOccurs='0' name='magnitude-status' default='='>
-            <xs:simpleType>
-            <xs:restriction base='xs:string'>
-              <xs:enumeration value='='/>
-              <xs:enumeration value='&lt;'/>
-              <xs:enumeration value='&gt;'/>
-              <xs:enumeration value='&lt;='/>
-              <xs:enumeration value='&gt;='/>
-              <xs:enumeration value='~'/>
-            </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' ref='mlhim244:magnitude-status'/>
+
           <xs:element maxOccurs='1' minOccurs='1' name='error'  type='xs:int' default='0'/>
           <xs:element maxOccurs='1' minOccurs='1' name='accuracy' type='xs:int' default='0'/>
           <xs:element maxOccurs='1' minOccurs='1' ref='ccd:el-8f391814-8fd1-481f-99c1-6a211b87418b'/> <!-- DvCount-units -->
@@ -2448,18 +2438,7 @@ functionally related to:
           <xs:element maxOccurs='1' minOccurs='0' ref='mlhim244:reference-ranges'/>
           <xs:element maxOccurs='1' minOccurs='0' name='normal-status' type='xs:string' default=''/> 
           <xs:element maxOccurs='1' minOccurs='1'  name='magnitude' type='xs:decimal'/>
-          <xs:element maxOccurs='1' minOccurs='0' name='magnitude-status' default='='>
-            <xs:simpleType>
-            <xs:restriction base='xs:string'>
-              <xs:enumeration value='='/>
-              <xs:enumeration value='&lt;'/>
-              <xs:enumeration value='&gt;'/>
-              <xs:enumeration value='&lt;='/>
-              <xs:enumeration value='&gt;='/>
-              <xs:enumeration value='~'/>
-            </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' ref='mlhim244:magnitude-status'/>
           <xs:element maxOccurs='1' minOccurs='1' name='error'  type='xs:int' default='0'/>
           <xs:element maxOccurs='1' minOccurs='1' name='accuracy' type='xs:int' default='0'/>
           <xs:element maxOccurs='1' minOccurs='1' ref='ccd:el-c73aee3b-0952-410e-9861-81b8101161b5'/> <!-- DvQuantity-units -->
@@ -2539,44 +2518,17 @@ functionally related to:
           <xs:element maxOccurs='1' minOccurs='0' ref='ccd:el-cc253572-1043-43bf-b500-2d2d57aa7be3'/> <!-- reference-ranges -->
           <xs:element maxOccurs='1' minOccurs='0' name='normal-status' type='xs:string' default=''/> 
           <xs:element maxOccurs='1' minOccurs='0' name='magnitude' type='xs:decimal'/>
-          <xs:element maxOccurs='1' minOccurs='0' name='magnitude-status' default='='>
-            <xs:simpleType>
-            <xs:restriction base='xs:string'>
-              <xs:enumeration value='='/>
-              <xs:enumeration value='&lt;'/>
-              <xs:enumeration value='&gt;'/>
-              <xs:enumeration value='&lt;='/>
-              <xs:enumeration value='&gt;='/>
-              <xs:enumeration value='~'/>
-            </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
+          <xs:element maxOccurs='1' minOccurs='0' ref='mlhim244:magnitude-status'/>
           <xs:element maxOccurs='1' minOccurs='1' name='error'  type='xs:int' default='0'/>
-          <xs:element maxOccurs='1' minOccurs='1' name='accuracy' type='xs:int' default='0'/>
-          <xs:element maxOccurs='1' minOccurs='1' name='ratio-type' default='ratio'>
-            <xs:simpleType>
-            <xs:restriction base='xs:string'>
-              <xs:enumeration value='ratio'/>
-              <xs:enumeration value='proportion'/>
-              <xs:enumeration value='rate'/>
-            </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element maxOccurs='1' minOccurs='1' name='numerator'>
-            <xs:simpleType>
-            <xs:restriction base='xs:decimal'>
-            </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
-          <xs:element maxOccurs='1' minOccurs='1' name='denominator'>
-            <xs:simpleType>
-            <xs:restriction base='xs:decimal'>
-            </xs:restriction>
-            </xs:simpleType>
-          </xs:element>
+          <xs:element maxOccurs='1' minOccurs='1' name='accuracy' type='xs:decimal' default='0'/>
+          
+          <xs:element maxOccurs='1' minOccurs='1' ref='mlhim244:ratio-type'/>
+          
+          <xs:element maxOccurs='1' minOccurs='1' name='numerator' type="xs:decimal"/>
+          <xs:element maxOccurs='1' minOccurs='1' name='denominator' type="xs:decimal"/>
           <xs:element maxOccurs='1' minOccurs='1' ref='ccd:el-ce1eda0c-5f00-439a-9be2-398224c99e66'/> <!-- numerator-units -->
           <xs:element maxOccurs='1' minOccurs='1' ref='ccd:el-ce1eda0c-5f00-439a-9be2-398224c99e66'/> <!-- denominator-units -->
-          <xs:element maxOccurs='1' minOccurs='0' name='ratio-units' type='mlhim244:DvStringType'/>
+          <xs:element maxOccurs='1' minOccurs='0' ref='mlhim244:ratio-units'/>
           </xs:sequence>
         </xs:restriction>
       </xs:complexContent>
@@ -2649,21 +2601,34 @@ functionally related to:
     <xs:complexContent>
       <xs:restriction base='mlhim244:DvIntervalType'>
         <xs:sequence>
-          <xs:element maxOccurs='1' minOccurs='1' name='data-name' type='xs:string' fixed="Bradicardia for 0 to 3 months"/>
+          <xs:element maxOccurs='1' minOccurs='1' name='data-name' type='xs:string' fixed="Casual glucose test: &lt; 200mg/dl"/>
           <xs:element maxOccurs='1' minOccurs='0' ref='mlhim244:ExceptionalValue'/>
           <xs:element maxOccurs='1' minOccurs='0' name='valid-time-begin' type='xs:dateTime'/>
           <xs:element maxOccurs='1' minOccurs='0' name='valid-time-end' type='xs:dateTime'/>
-          <xs:element maxOccurs='1' minOccurs='1' name='lower' type='xs:int' fixed='0'/>
-          <xs:element maxOccurs='1' minOccurs='1'  name='upper' type='xs:int' fixed='80'/>
-          <xs:element maxOccurs='1' minOccurs='1' name='lower-included' type='xs:boolean' fixed='true'/>
-          <xs:element maxOccurs='1' minOccurs='1' name='upper-included' type='xs:boolean' fixed='false'/>
-          <xs:element maxOccurs='1' minOccurs='1' name='lower-bounded' type='xs:boolean' fixed='true'/>
-          <xs:element maxOccurs='1' minOccurs='1' name='upper-bounded'  type='xs:boolean' fixed='true'/>
-          </xs:sequence>
-        </xs:restriction>
+          <xs:element maxOccurs='1' minOccurs='1' name='interval' type='ccd:ct-7f7f8c6f-3b44-477f-a1f4-9d029eb73985'/>          
+        </xs:sequence>
+      </xs:restriction>
       </xs:complexContent>
     </xs:complexType>
-
+  
+  <xs:complexType name='ct-7f7f8c6f-3b44-477f-a1f4-9d029eb73985'>
+    <xs:complexContent>
+      <xs:restriction base="mlhim244:interval-type">
+        <xs:sequence>
+          <xs:element name="decimal-interval">
+            <xs:simpleType>
+              <xs:restriction base="xs:decimal">
+                <xs:minInclusive value="0"/>
+                <xs:maxInclusive value="200"/>
+              </xs:restriction>
+            </xs:simpleType>
+          </xs:element>
+        </xs:sequence>
+      </xs:restriction>
+    </xs:complexContent>
+  </xs:complexType>
+  
+  
   <xs:element name='el-90d5df6f-b3ef-4d53-93d2-de4a5afdb18f' substitutionGroup='mlhim244:items' type='ccd:ct-90d5df6f-b3ef-4d53-93d2-de4a5afdb18f'/>
   <xs:complexType name='ct-90d5df6f-b3ef-4d53-93d2-de4a5afdb18f'> <!-- Adapter for: Test Ratio -->
     <xs:complexContent>
