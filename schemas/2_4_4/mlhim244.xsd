@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:mlhim244="http://www.mlhim.org/xmlns/mlhim2/244" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" id="mlhim2-244" targetNamespace="http://www.mlhim.org/xmlns/mlhim2/244" version="1"
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" 
+  xmlns:mlhim244="http://www.mlhim.org/xmlns/mlhim2/2_4_4" 
+  xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" id="mlhim2-2_4_4" 
+  targetNamespace="http://www.mlhim.org/xmlns/mlhim2/2_4_4" version="1"
   xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.1">
   <xs:annotation>
     <xs:documentation>
@@ -7,7 +10,7 @@
     It consists of the core datatypes and structures for MLHIM models, called Concept Constraint Definitions (CCDs).
     Further documentation and implementation instructions can be found on or via links from http://www.mlhim.org
     
-    The abbreviations 'Dv' and 'dv' in the complexType and element names refer to the words; Data Value. 
+    The abbreviations 'Dv' and 'dv' in the complexType and element names refer to the words; Data Value. Dvs are the leaf datatypes in MLHIM along 
   </xs:documentation>
     <xs:appinfo>
       <rdf:Description rdf:about="http://www.mlhim.org/xmlns/mlhim2/244">

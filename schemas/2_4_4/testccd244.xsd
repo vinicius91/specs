@@ -1,6 +1,6 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <xs:schema  xmlns:xs='http://www.w3.org/2001/XMLSchema'
-  xmlns:mlhim244='http://www.mlhim.org/xmlns/mlhim2/244'
+  xmlns:mlhim244='http://www.mlhim.org/xmlns/mlhim2/2_4_4'
   xmlns:ccd='http://www.ccdgen.com/ccdlib/ccd-f2b7c24b-39c0-4ff4-b528-f8b509429572'
   xmlns:rdf='http://www.w3.org/1999/02/22-rdf-syntax-ns#'
   xmlns:owl='http://www.w3.org/2002/07/owl#'
@@ -14,7 +14,7 @@
 >
 
   <!-- Import the Reference Model -->
-  <xs:import schemaLocation='http://www.mlhim.org/xmlns/mlhim2/244/mlhim244.xsd' namespace='http://www.mlhim.org/xmlns/mlhim2/244'/>
+  <xs:import schemaLocation='http://www.mlhim.org/xmlns/mlhim2/2_4_4/mlhim244.xsd' namespace='http://www.mlhim.org/xmlns/mlhim2/2_4_4'/>
   
   
   <!-- METADATA Section -->
