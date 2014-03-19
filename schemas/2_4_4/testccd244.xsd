@@ -234,17 +234,17 @@
 
 
 
-  <xs:complexType name='ct-ed86b8c8-88e4-4285-ad84-ecb162329a96' xml:lang='en-US'> <!-- FAD PartyIdentified -->
+  <xs:complexType name='ct-ed86b8c8-88e4-4285-ad84-ecb162329a96' xml:lang='en-US'> <!-- FAD Party -->
     <xs:annotation>
     <xs:documentation>
-      A PartyIdentified for FeederAuditDetails. The details cluster should first be copied and then specifics added to the new details cluster. 
+      A Party for FeederAuditDetails. The details cluster should first be copied and then specifics added to the new details cluster. 
     </xs:documentation>
     <xs:appinfo>
-    <!--No valid semantic links for  ct-ed86b8c8-88e4-4285-ad84-ecb162329a96 : FAD PartyIdentified -->
+    <!--No valid semantic links for  ct-ed86b8c8-88e4-4285-ad84-ecb162329a96 : FAD Party -->
     </xs:appinfo>
     </xs:annotation>
     <xs:complexContent>
-      <xs:restriction base='mlhim244:PartyIdentifiedType'>
+      <xs:restriction base='mlhim244:PartyType'>
         <xs:sequence>
           <xs:element maxOccurs='1' minOccurs='1' name='party-name' type='xs:string'/>
           <xs:element maxOccurs='1' minOccurs='0' ref='mlhim244:external-ref'/>
@@ -256,19 +256,19 @@
 
 
 
-  <xs:complexType name='ct-1c85b787-6116-4126-b75b-8183aabe0584'> <!-- PartyIdentified Details (US) -->
+  <xs:complexType name='ct-1c85b787-6116-4126-b75b-8183aabe0584'> <!-- Party Details (US) -->
     <xs:annotation>
     <xs:documentation>
-      Generic PartyIdentified Details cluster with address elements.
+      Generic Party Details cluster with address elements.
     </xs:documentation>
     <xs:appinfo>
-    <!--No valid semantic links for  ct-1c85b787-6116-4126-b75b-8183aabe0584 : PartyIdentified Details (US) -->
+    <!--No valid semantic links for  ct-1c85b787-6116-4126-b75b-8183aabe0584 : Party Details (US) -->
     </xs:appinfo>
     </xs:annotation>
     <xs:complexContent>
       <xs:restriction base='mlhim244:ClusterType'>
         <xs:sequence>
-          <xs:element maxOccurs='1' minOccurs='1' name='cluster-subject' type='xs:string' fixed="PartyIdentified Details (US)"/>
+          <xs:element maxOccurs='1' minOccurs='1' name='cluster-subject' type='xs:string' fixed="Party Details (US)"/>
       <xs:element maxOccurs='1' minOccurs='1' ref='ccd:el-d24affc1-a9ff-487a-9029-204f3b4d8e7e'/><!-- DvString Additional Address Line(s) (US)  -->
       <xs:element maxOccurs='1' minOccurs='1' ref='ccd:el-b65ea20c-3768-45cd-a059-004ece61bc89'/><!-- DvString City Name (US) -->
       <xs:element maxOccurs='1' minOccurs='1' ref='ccd:el-77848a52-5adb-41b2-89d6-f8fec018c05a'/><!-- DvString Common Name / Nickname -->
@@ -1068,17 +1068,17 @@ Examples:
 
 
 
-  <xs:complexType name='ct-83fc62c8-8df8-472a-b590-d8ecea82d695' xml:lang='en-US'> <!-- Generic PartyIdentified -->
+  <xs:complexType name='ct-83fc62c8-8df8-472a-b590-d8ecea82d695' xml:lang='en-US'> <!-- Generic Party -->
     <xs:annotation>
     <xs:documentation>
-      A generic, reusable PartyIdentified. The details cluster should first be copied and then specifics added to the new details cluster. 
+      A generic, reusable Party. The details cluster should first be copied and then specifics added to the new details cluster. 
     </xs:documentation>
     <xs:appinfo>
-    <!--No valid semantic links for  ct-83fc62c8-8df8-472a-b590-d8ecea82d695 : Generic PartyIdentified -->
+    <!--No valid semantic links for  ct-83fc62c8-8df8-472a-b590-d8ecea82d695 : Generic Party -->
     </xs:appinfo>
     </xs:annotation>
     <xs:complexContent>
-      <xs:restriction base='mlhim244:PartyIdentifiedType'>
+      <xs:restriction base='mlhim244:PartyType'>
         <xs:sequence>
           <xs:element maxOccurs='1' minOccurs='1' name='party-name' type='xs:string'/>
           <xs:element maxOccurs='1' minOccurs='0' ref='ccd:el-4c8a56b0-c452-4b78-a861-1f2a47163693'/> <!-- external-ref -->
@@ -1090,19 +1090,19 @@ Examples:
 
 
 
-  <xs:complexType name='ct-4c8a56b0-c452-4b78-a861-1f2a47163693' xml:lang='en-US'> <!-- External Reference for PartyIdentified -->
+  <xs:complexType name='ct-4c8a56b0-c452-4b78-a861-1f2a47163693' xml:lang='en-US'> <!-- External Reference for Party -->
     <xs:annotation>
     <xs:documentation>
-      A generic URI for use with PartyIdentified to be used as a pointer to a demographic service record.
+      A generic URI for use with Party to be used as a pointer to a demographic service record.
     </xs:documentation>
     <xs:appinfo>
-    <!--No valid semantic links for  ct-4c8a56b0-c452-4b78-a861-1f2a47163693 : External Reference for PartyIdentified -->
+    <!--No valid semantic links for  ct-4c8a56b0-c452-4b78-a861-1f2a47163693 : External Reference for Party -->
     </xs:appinfo>
     </xs:annotation>
     <xs:complexContent>
       <xs:restriction base='mlhim244:DvURIType'>
         <xs:sequence>
-          <xs:element maxOccurs='1' minOccurs='1' name='data-name' type='xs:string' fixed="External Reference for PartyIdentified"/>
+          <xs:element maxOccurs='1' minOccurs='1' name='data-name' type='xs:string' fixed="External Reference for Party"/>
           <xs:element maxOccurs='1' minOccurs='0' ref='mlhim244:ExceptionalValue'/>
           <xs:element maxOccurs='1' minOccurs='0' name='valid-time-begin' type='xs:dateTime'/>
           <xs:element maxOccurs='1' minOccurs='0' name='valid-time-end' type='xs:dateTime'/>
@@ -1234,10 +1234,10 @@ Examples:
 
 
 
-  <xs:complexType name='ct-82b9422e-91f7-4df8-8e95-f50f85c4488a' xml:lang='en-US'> <!-- Generic FAD Subject PartySelf -->
+  <xs:complexType name='ct-82b9422e-91f7-4df8-8e95-f50f85c4488a' xml:lang='en-US'> <!-- Generic FAD Subject Party -->
     <xs:annotation>
     <xs:documentation>
-      A generic PartySelf entry to be used where no other specifics are needed.
+      A generic Party entry to be used where no other specifics are needed.
     </xs:documentation>
     <xs:appinfo>
     <rdf:Description rdf:about='ccd:ct-82b9422e-91f7-4df8-8e95-f50f85c4488a'>
@@ -1246,7 +1246,7 @@ Examples:
     </xs:appinfo>
     </xs:annotation>
     <xs:complexContent>
-      <xs:restriction base='mlhim244:PartySelfType'>
+      <xs:restriction base='mlhim244:PartyType'>
         <xs:sequence>
           <xs:element maxOccurs='1' minOccurs='1' name='party-name' type='xs:string' fixed='Self'/>
           </xs:sequence>
@@ -1319,10 +1319,10 @@ Examples:
 
 
 
-  <xs:complexType name='ct-83cfaa04-2563-43c0-8411-5a3adc7b12b4' xml:lang='en-US'> <!-- Generic PartySelf -->
+  <xs:complexType name='ct-83cfaa04-2563-43c0-8411-5a3adc7b12b4' xml:lang='en-US'> <!-- Generic Party -->
     <xs:annotation>
     <xs:documentation>
-      A generic PartySelf entry to be used where no other specifics are needed.
+      A generic Party entry to be used where no other specifics are needed.
     </xs:documentation>
     <xs:appinfo>
     <rdf:Description rdf:about='ccd:ct-83cfaa04-2563-43c0-8411-5a3adc7b12b4'>
@@ -1331,7 +1331,7 @@ Examples:
     </xs:appinfo>
     </xs:annotation>
     <xs:complexContent>
-      <xs:restriction base='mlhim244:PartySelfType'>
+      <xs:restriction base='mlhim244:PartyType'>
         <xs:sequence>
           <xs:element maxOccurs='1' minOccurs='1' name='party-name' type='xs:string' fixed='Self'/>
           </xs:sequence>
