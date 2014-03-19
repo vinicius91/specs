@@ -705,9 +705,9 @@
     </xs:sequence>
   </xs:complexType>
   <xs:element name="system-id" type="mlhim244:DvIdentifierType"/>
-  <xs:element name="provider" type="mlhim244:PartyIdentifiedType"/>
+  <xs:element name="provider" type="mlhim244:PartyType"/>
   <xs:element name="location" type="mlhim244:ItemType"/>
-  <xs:element name="subject" type="mlhim244:PartyProxyType"/>
+  <xs:element name="subject" type="mlhim244:PartyType"/>
   <xs:element name="FeederAuditDetails" type="mlhim244:FeederAuditDetailsType"/>
 
   <xs:complexType name="FeederAuditType">
@@ -755,7 +755,7 @@
   <xs:element name="original-content" type="mlhim244:DvURIType"/>
   <xs:element name="FeederAudit" type="mlhim244:FeederAuditType"/>
 
-  <xs:complexType abstract="true" name="PartyProxyType">
+  <xs:complexType name="PartyType">
     <xs:annotation>
       <xs:documentation>Abstract concept of a proxy description of a party, including an optional link to data for this party
         in a demographic or other identity management system. Sub- typed into PartyIdentified and PartySelf. </xs:documentation>
@@ -772,54 +772,16 @@
                 external system. </xs:documentation>
         </xs:annotation>
       </xs:element>
+      <xs:element maxOccurs="1" minOccurs="0" ref="mlhim244:details">
+        <xs:annotation>
+          <xs:documentation>Structural details about the party.</xs:documentation>
+        </xs:annotation>
+      </xs:element>      
     </xs:sequence>
   </xs:complexType>
   <xs:element name="external-ref" type="mlhim244:DvURIType"/>
-  <xs:element abstract="true" name="PartyProxy" type="mlhim244:PartyProxyType"/>
-
-
-  <xs:complexType name="PartyIdentifiedType">
-    <xs:annotation>
-      <xs:documentation>Proxy data for an identified party other than the subject of the record, minimally consisting of
-        human-readable identifier(s), such as name, formal (and possibly computable) identifiers such as NHS number, and an
-        optional link to external data. There must be at least one of name, identifier or external-ref present.Used to describe
-        parties where only identifiers may be known, and there is no entry at all in the demographic system (or even no
-        demographic system). Typi- cally for health care providers, e.g. name and provider number of an institution. Should not
-        be used to include patient identifying information. </xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:extension base="mlhim244:PartyProxyType">
-        <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="0" ref="mlhim244:details">
-            <xs:annotation>
-              <xs:documentation>Structural details about the party </xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:extension>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="details" type="mlhim244:ItemType"/>
-  <xs:element name="PartyIdentified" substitutionGroup="mlhim244:PartyProxy" type="mlhim244:PartyIdentifiedType"/>
-
-  <xs:complexType name="PartySelfType">
-    <xs:annotation>
-      <xs:documentation>Party proxy representing the subject of the record. May or may not have external-ref set. But
-        external-ref usually points to a record persisted in a demographics service. </xs:documentation>
-    </xs:annotation>
-    <xs:complexContent>
-      <xs:restriction base="mlhim244:PartyProxyType">
-        <xs:sequence>
-          <xs:element maxOccurs="1" minOccurs="1" name="party-name" type="xs:string" fixed="Self">
-            <xs:annotation>
-              <xs:documentation>Fixed to the string "Self".</xs:documentation>
-            </xs:annotation>
-          </xs:element>
-        </xs:sequence>
-      </xs:restriction>
-    </xs:complexContent>
-  </xs:complexType>
-  <xs:element name="PartySelf" substitutionGroup="mlhim244:PartyProxy" type="mlhim244:PartySelfType"/>
+  <xs:element name="details" type="mlhim244:ItemType"/>  
+  <xs:element name="Party" type="mlhim244:PartyType"/>
 
   <xs:complexType name="AttestationType">
     <xs:annotation>
@@ -862,7 +824,7 @@
   <xs:element name="attested-view" type="mlhim244:DvMediaType"/>
   <xs:element name="proof" type="mlhim244:DvParsableType"/>
   <xs:element name="reason" type="mlhim244:DvStringType"/>
-  <xs:element name="committer" type="mlhim244:PartyProxyType"/>
+  <xs:element name="committer" type="mlhim244:PartyType"/>
   <xs:element name="Attestation" type="mlhim244:AttestationType"/>
 
   <xs:complexType name="ParticipationType">
@@ -903,7 +865,7 @@
       </xs:element>
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="performer" type="mlhim244:PartyProxyType"/>
+  <xs:element name="performer" type="mlhim244:PartyType"/>
   <xs:element name="function" type="mlhim244:DvStringType"/>
   <xs:element name="mode" type="mlhim244:DvStringType"/>
   <xs:element name="Participation" type="mlhim244:ParticipationType"/>
@@ -1295,8 +1257,8 @@
   </xs:complexType>
   <xs:element name="entry-links" type="mlhim244:DvURIType"/>
   <xs:element name="entry-audit" type="mlhim244:FeederAuditType"/>
-  <xs:element name="entry-subject" type="mlhim244:PartyProxyType"/>
-  <xs:element name="entry-provider" type="mlhim244:PartyProxyType"/>
+  <xs:element name="entry-subject" type="mlhim244:PartyType"/>
+  <xs:element name="entry-provider" type="mlhim244:PartyType"/>
   <xs:element name="other-participations" type="mlhim244:ParticipationType"/>
   <xs:element name="protocol-id" type="mlhim244:DvIdentifierType"/>
   <xs:element name="workflow-id" type="mlhim244:DvURIType"/>
