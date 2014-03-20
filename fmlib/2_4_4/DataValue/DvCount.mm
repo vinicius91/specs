@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node BACKGROUND_COLOR="#99ffff" CREATED="1395236889057" ID="ID_32730183" MODIFIED="1395325682844" TEXT="DvCount">
+<node BACKGROUND_COLOR="#99ffff" CREATED="1395236889057" ID="ID_32730183" MODIFIED="1395348715340" TEXT="DvCount">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -41,10 +41,9 @@
       Optional list of ReferenceRanges for this value in its particular measurement context
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 </node>
-<node BACKGROUND_COLOR="#99ffff" CREATED="1395325792526" ID="ID_634748695" MODIFIED="1395325946055" POSITION="right" TEXT="Units">
+<node BACKGROUND_COLOR="#99ffff" CREATED="1395325792526" ID="ID_634748695" MODIFIED="1395348966789" POSITION="right" TEXT="Units">
 <richcontent TYPE="NOTE"><html>
   <head>
     

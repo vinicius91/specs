@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node BACKGROUND_COLOR="#99ffff" CREATED="1395236889057" ID="ID_32730183" MODIFIED="1395347911351" TEXT="DvQuantity">
+<node BACKGROUND_COLOR="#99ffff" CREATED="1395236889057" ID="ID_32730183" MODIFIED="1395349087001" TEXT="DvTemporal">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -31,34 +31,43 @@
 <icon BUILTIN="attach"/>
 <attribute NAME="value" VALUE=""/>
 </node>
-<node BACKGROUND_COLOR="#99ffff" CREATED="1395325527960" ID="ID_172124703" MODIFIED="1395325586748" POSITION="right" TEXT="reference-ranges">
+<node CREATED="1395238265421" ID="ID_273404892" MODIFIED="1395349460190" POSITION="right" TEXT="allowed-types">
 <richcontent TYPE="NOTE"><html>
   <head>
     
   </head>
   <body>
     <p>
-      Optional list of ReferenceRanges for this value in its particular measurement context
-    </p>
-  </body>
-</html></richcontent>
-</node>
-<node BACKGROUND_COLOR="#99ffff" CREATED="1395325792526" ID="ID_634748695" MODIFIED="1395326107812" POSITION="right" TEXT="Units">
-<richcontent TYPE="NOTE"><html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      Stringified units, expressed in unit syntax, e.g. &quot;kg/m2&quot;, &#8220;mm[Hg]&quot;, &quot;ms-1&quot;, &quot;km/h&quot;. A DvCodedStringType should be used when possible.
+      The number in the value column indicates how many instances of each type will be allowed.
     </p>
     <p>
-      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;UOM codes can be found: http://www.obofoundry.org Also available in other terminologies such as SNOMEDCT.
+      
+    </p>
+    <p>
+      Defines the concept of date and time types.
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Must be constrained in CCDs to be one or more of the below elements.&#160;
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;This gives the modeller the ability to optionally allow partial dates at run time.&#160;
+    </p>
+    <p>
+      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;Setting maxOccurs and minOccurs to zero cause the element to be prohibited.
     </p>
   </body>
-</html></richcontent>
-<icon BUILTIN="messagebox_warning"/>
-<icon BUILTIN="full-2"/>
+</html>
+</richcontent>
+<icon BUILTIN="pencil"/>
+<attribute NAME="time" VALUE="0"/>
+<attribute NAME="date" VALUE="0"/>
+<attribute NAME="datetime" VALUE="0"/>
+<attribute NAME="day" VALUE="0"/>
+<attribute NAME="month" VALUE="0"/>
+<attribute NAME="year" VALUE="0"/>
+<attribute NAME="year-month" VALUE="0"/>
+<attribute NAME="month-day" VALUE="0"/>
+<attribute NAME="duration" VALUE="0"/>
 </node>
 </node>
 </map>

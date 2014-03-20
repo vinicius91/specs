@@ -563,7 +563,7 @@
       <xs:documentation>Class defining the concept of date and time types. 
         Must be constrained in CCDs to be one or more of the below elements.  
         This gives the modeller the ability to optionally allow partial dates at run time.  
-        Setting maxOccurs and minOccurs to zero cause the element to be prohibitied.
+        Setting maxOccurs and minOccurs to zero cause the element to be prohibited.
       </xs:documentation>
     </xs:annotation>
     <xs:complexContent>

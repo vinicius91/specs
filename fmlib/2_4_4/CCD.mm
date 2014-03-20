@@ -10,10 +10,9 @@
       A MLHIM release 2.4.4 CCD definition.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <font BOLD="true" NAME="SansSerif" SIZE="19"/>
-<node BACKGROUND_COLOR="#9966ff" COLOR="#ffffff" CREATED="1395238449288" ID="ID_1374565992" MODIFIED="1395325042735" POSITION="right" STYLE="bubble" TEXT="definition">
+<node BACKGROUND_COLOR="#9966ff" COLOR="#ffffff" CREATED="1395238449288" ID="ID_1374565992" MODIFIED="1395348967291" POSITION="right" STYLE="bubble" TEXT="definition">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -39,8 +38,7 @@
       You must expand this node to enter required metadata information.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <icon BUILTIN="pencil"/>
 <node CREATED="1395241136435" ID="ID_753320252" MODIFIED="1395242291563" TEXT="CCD-Gen Project Name">
 <icon BUILTIN="pencil"/>
@@ -65,8 +63,7 @@
       If you have more than three Contributors then copy this node and paste as many as required onto the MetaData node.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <icon BUILTIN="attach"/>
 <attribute NAME="name" VALUE=""/>
 <attribute NAME="email" VALUE=""/>

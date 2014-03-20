@@ -14,7 +14,7 @@
 <icon BUILTIN="attach"/>
 <attribute NAME="value" VALUE=""/>
 </node>
-<node BACKGROUND_COLOR="#ffffff" COLOR="#000000" CREATED="1395237009876" ID="ID_1538328552" MODIFIED="1395324571117" POSITION="right" TEXT="definition">
+<node BACKGROUND_COLOR="#ffffff" COLOR="#000000" CREATED="1395237009876" ID="ID_1538328552" MODIFIED="1395347893966" POSITION="right" TEXT="definition">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -39,8 +39,7 @@
       <b>data-range</b>: Select a DvInterval.
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <icon BUILTIN="messagebox_warning"/>
 <icon BUILTIN="full-4"/>
 </node>
@@ -57,8 +56,7 @@
       <b><font size="3">is-normal</font></b><font size="3">: Is this a normal range? Enter True or False.</font>
     </p>
   </body>
-</html>
-</richcontent>
+</html></richcontent>
 <icon BUILTIN="pencil"/>
 <attribute NAME="value" VALUE=""/>
 </node>

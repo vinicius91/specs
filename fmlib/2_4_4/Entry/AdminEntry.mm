@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node BACKGROUND_COLOR="#9966ff" CREATED="1395242125381" ID="ID_570150755" MODIFIED="1395244236368" TEXT="CareEntry">
+<node BACKGROUND_COLOR="#9966ff" CREATED="1395242125381" ID="ID_570150755" MODIFIED="1395351511935" TEXT="AdminEntry">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
 <node BACKGROUND_COLOR="#99ffff" CREATED="1395244256788" ID="ID_1686501755" MODIFIED="1395249038192" POSITION="right" STYLE="bubble" TEXT="entry-links">
 <icon BUILTIN="full-1"/>

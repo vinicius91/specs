@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node BACKGROUND_COLOR="#99ffff" CREATED="1395236889057" ID="ID_32730183" MODIFIED="1395347911351" TEXT="DvQuantity">
+<node BACKGROUND_COLOR="#99ffff" CREATED="1395236889057" ID="ID_32730183" MODIFIED="1395348318699" TEXT="DvOrdinal">
 <richcontent TYPE="NOTE"><html>
   <head>
     
@@ -31,34 +31,21 @@
 <icon BUILTIN="attach"/>
 <attribute NAME="value" VALUE=""/>
 </node>
-<node BACKGROUND_COLOR="#99ffff" CREATED="1395325527960" ID="ID_172124703" MODIFIED="1395325586748" POSITION="right" TEXT="reference-ranges">
-<richcontent TYPE="NOTE"><html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      Optional list of ReferenceRanges for this value in its particular measurement context
-    </p>
-  </body>
-</html></richcontent>
+<node CREATED="1395238265421" ID="ID_273404892" MODIFIED="1395348369068" POSITION="right" TEXT="symbol">
+<icon BUILTIN="pencil"/>
+<attribute NAME="option1" VALUE=""/>
+<attribute NAME="option2" VALUE=""/>
+<attribute NAME="option3" VALUE=""/>
+<attribute NAME="option4" VALUE=""/>
+<attribute NAME="option5" VALUE=""/>
 </node>
-<node BACKGROUND_COLOR="#99ffff" CREATED="1395325792526" ID="ID_634748695" MODIFIED="1395326107812" POSITION="right" TEXT="Units">
-<richcontent TYPE="NOTE"><html>
-  <head>
-    
-  </head>
-  <body>
-    <p>
-      Stringified units, expressed in unit syntax, e.g. &quot;kg/m2&quot;, &#8220;mm[Hg]&quot;, &quot;ms-1&quot;, &quot;km/h&quot;. A DvCodedStringType should be used when possible.
-    </p>
-    <p>
-      &#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;&#160;UOM codes can be found: http://www.obofoundry.org Also available in other terminologies such as SNOMEDCT.
-    </p>
-  </body>
-</html></richcontent>
-<icon BUILTIN="messagebox_warning"/>
-<icon BUILTIN="full-2"/>
+<node CREATED="1395238265421" ID="ID_784366707" MODIFIED="1395348390431" POSITION="right" TEXT="ordinal">
+<icon BUILTIN="pencil"/>
+<attribute NAME="option1" VALUE=""/>
+<attribute NAME="option2" VALUE=""/>
+<attribute NAME="option3" VALUE=""/>
+<attribute NAME="option4" VALUE=""/>
+<attribute NAME="option5" VALUE=""/>
 </node>
 </node>
 </map>

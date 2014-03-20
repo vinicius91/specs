@@ -1,6 +1,6 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node BACKGROUND_COLOR="#9966ff" CREATED="1395242125381" ID="ID_570150755" MODIFIED="1395244236368" TEXT="CareEntry">
+<node BACKGROUND_COLOR="#9966ff" CREATED="1395242125381" ID="ID_570150755" MODIFIED="1395351541471" TEXT="DemographicEntry">
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
 <node BACKGROUND_COLOR="#99ffff" CREATED="1395244256788" ID="ID_1686501755" MODIFIED="1395249038192" POSITION="right" STYLE="bubble" TEXT="entry-links">
 <icon BUILTIN="full-1"/>
@@ -10,7 +10,18 @@
 <icon BUILTIN="full-0"/>
 <attribute NAME="cardinality" VALUE="0..1"/>
 </node>
-<node BACKGROUND_COLOR="#ff9900" CREATED="1395249434564" ID="ID_176372448" MODIFIED="1395249493996" POSITION="right" TEXT="entry-data">
+<node BACKGROUND_COLOR="#ff9900" CREATED="1395249434564" ID="ID_176372448" MODIFIED="1395351655870" POSITION="right" TEXT="entry-data">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      <b>entry-data&#160;must only be a Cluster via the XML2CCD format. </b>
+    </p>
+  </body>
+</html>
+</richcontent>
 <icon BUILTIN="messagebox_warning"/>
 <attribute NAME="cardinality" VALUE="1..1"/>
 </node>
@@ -34,7 +45,7 @@
 <icon BUILTIN="full-5"/>
 <attribute NAME="cardinality" VALUE="0..1"/>
 </node>
-<node BACKGROUND_COLOR="#ccccff" CREATED="1395244256788" ID="ID_1344523027" MODIFIED="1395351400866" POSITION="right" STYLE="bubble" TEXT="attestation">
+<node BACKGROUND_COLOR="#ccccff" CREATED="1395244256788" ID="ID_1344523027" MODIFIED="1395351575133" POSITION="right" STYLE="bubble" TEXT="attestation">
 <attribute NAME="cardinality" VALUE="0..*"/>
 </node>
 <node BACKGROUND_COLOR="#99ffff" CREATED="1395244256788" ID="ID_762925646" MODIFIED="1395351454758" POSITION="left" STYLE="bubble" TEXT="workflow-id">
