@@ -39,5 +39,13 @@
 <attribute NAME="option4" VALUE=""/>
 <attribute NAME="option5" VALUE=""/>
 </node>
+<node CREATED="1395250358385" ID="ID_941873881" MODIFIED="1395250391256" POSITION="left" TEXT="Description">
+<icon BUILTIN="pencil"/>
+<attribute NAME="value" VALUE=""/>
+</node>
+<node CREATED="1395250405785" ID="ID_316095547" MODIFIED="1395315526068" POSITION="right" TEXT="Semantic Reference for rdf:isDefinedBy:">
+<icon BUILTIN="attach"/>
+<attribute NAME="value" VALUE=""/>
+</node>
 </node>
 </map>

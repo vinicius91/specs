@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<xml-to-ccd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:SchemaLocation="http://www.mlhim.org/xmlns/mlhim2/xml2ccd/XML2CCD.xsd"
+<xml-to-ccd xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+  xsi:SchemaLocation="http://www.mlhim.org/xmlns/mlhim2/xml2ccd http://www.mlhim.org/xmlns/mlhim2/xml2ccd/XML2CCD.xsd"
   defaultNamespace="http://www.mlhim.org/xmlns/mlhim2/xml2ccd">
   <version>1.0</version>
   <ccd-def>

@@ -18,9 +18,9 @@
 <icon BUILTIN="pencil"/>
 <attribute NAME="value" VALUE=""/>
 </node>
-<node CREATED="1395250405785" ID="ID_1197490946" MODIFIED="1395250452509" POSITION="left" TEXT="Semantic References">
+<node CREATED="1395250405785" ID="ID_1089115403" MODIFIED="1395315526068" POSITION="right" TEXT="Semantic Reference for rdf:isDefinedBy:">
 <icon BUILTIN="attach"/>
-<attribute NAME="rdf:isDefinedBy:" VALUE=""/>
+<attribute NAME="value" VALUE=""/>
 </node>
 </node>
 </map>

@@ -1,13 +1,47 @@
 <map version="1.0.1">
 <!-- To view this file, download free mind mapping software FreeMind from http://freemind.sourceforge.net -->
-<node BACKGROUND_COLOR="#ffff00" CREATED="1395238434812" ID="ID_597088175" MODIFIED="1395250881850" TEXT="CCD">
+<node BACKGROUND_COLOR="#ffff00" CREATED="1395238434812" ID="ID_597088175" MODIFIED="1395325012312" TEXT="CCD">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      A MLHIM release 2.4.4 CCD definition.
+    </p>
+  </body>
+</html>
+</richcontent>
 <font BOLD="true" NAME="SansSerif" SIZE="19"/>
-<node BACKGROUND_COLOR="#9966ff" COLOR="#ffffff" CREATED="1395238449288" ID="ID_1374565992" MODIFIED="1395250898957" POSITION="right" STYLE="bubble" TEXT="definition">
+<node BACKGROUND_COLOR="#9966ff" COLOR="#ffffff" CREATED="1395238449288" ID="ID_1374565992" MODIFIED="1395325042735" POSITION="right" STYLE="bubble" TEXT="definition">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      Select an Entry option.
+    </p>
+  </body>
+</html>
+</richcontent>
 <font BOLD="true" NAME="SansSerif" SIZE="12"/>
 <icon BUILTIN="messagebox_warning"/>
 <attribute NAME="cardinality" VALUE="1..1"/>
 </node>
-<node CREATED="1395242334905" FOLDED="true" ID="ID_767764255" MODIFIED="1395258378956" POSITION="right" TEXT="MetaData">
+<node CREATED="1395242334905" FOLDED="true" ID="ID_767764255" MODIFIED="1395325228866" POSITION="right" TEXT="MetaData">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      You must expand this node to enter required metadata information.
+    </p>
+  </body>
+</html>
+</richcontent>
+<icon BUILTIN="pencil"/>
 <node CREATED="1395241136435" ID="ID_753320252" MODIFIED="1395242291563" TEXT="CCD-Gen Project Name">
 <icon BUILTIN="pencil"/>
 <attribute NAME="value" VALUE=""/>
@@ -21,7 +55,18 @@
 <attribute NAME="name" VALUE=""/>
 <attribute NAME="email" VALUE=""/>
 </node>
-<node CREATED="1395242611050" ID="ID_1157362819" MODIFIED="1395242786453" TEXT="Contributor">
+<node CREATED="1395242611050" ID="ID_1157362819" MODIFIED="1395325210600" TEXT="Contributor">
+<richcontent TYPE="NOTE"><html>
+  <head>
+    
+  </head>
+  <body>
+    <p>
+      If you have more than three Contributors then copy this node and paste as many as required onto the MetaData node.
+    </p>
+  </body>
+</html>
+</richcontent>
 <icon BUILTIN="attach"/>
 <attribute NAME="name" VALUE=""/>
 <attribute NAME="email" VALUE=""/>

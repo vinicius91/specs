@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<x2c:xml-to-ccd xmlns:x2c="http://www.mlhim.org/xmlns/mlhim2/xml2ccd"
+ xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+ xsi:schemaLocation="http://www.mlhim.org/xmlns/mlhim2/xml2ccd file:/home/tim/MLHIM/git/specs/xml2ccd/XML2CCD.xsd">
+  <version>2.4.4</version>
+  <ccd-def>
+    <title>Uk960akofYDUbL7</title>
+    <description>None provided by author.</description>
+    <subject>None provided by author.</subject>
+    <source>None provided by author.</source>
+    <rights>None provided by author.</rights>
+    <relation>None provided by author.</relation>
+    <coverage>None provided by author.</coverage>
+    <creator-name>TLXlJOXh9Rt7zeTPW6bWJeNibew8s</creator-name>
+    <creator-email>uKeA</creator-email>
+    <contributor>
+      <name>SOj2rd1FsRKG3eUUwb2jQ6ZZTCB</name>
+      <email>lPXQNFLv-APQ</email>
+    </contributor>
+  </ccd-def>
+  <x2c:entry>
+    <entry-type>demog</entry-type>
+    <entry-link>
+      <data-name>KDKLHd</data-name>
+      <resource-uri>FnTH41EZCfdv4bfdf.UG3-BZ</resource-uri>
+      <description>UrUT3_MRQHY</description>
+      <relation>eF5CMbKNmmDHiOKCspmYAb9</relation>
+    </entry-link>
+    <entry-link>
+      <data-name>vHBWGrB9Eju7x4NJtEdh9f</data-name>
+      <resource-uri>RVDt</resource-uri>
+      <description>m</description>
+      <relation>sZ1myb</relation>
+    </entry-link>
+    <entry-audit>
+    </entry-audit>
+    <language>ja-JP</language>
+    <encoding>qciaiHE1LgprXeJ1MZ</encoding>
+    <entry-subject>
+      <data-name>H1A</data-name>
+      <resource-uri>s6L9n</resource-uri>
+      <description>mK0Qbyvo0O6po0DFKsopNBBhQXF</description>
+    </entry-subject>
+    <entry-provider>
+      <data-name>Xv</data-name>
+      <resource-uri>vwGbWWbwSm-8WYfgh2qY808FJB2och</resource-uri>
+      <description>A8ScPlXY6x4cqcxC7F5geX</description>
+    </entry-provider>
+    <other-participations>
+      <data-name>kl3d5xg._ZrFsr2C0Jr</data-name>
+      <resource-uri>Aku6dOv3EpMgHW1o48JWMhwn</resource-uri>
+      <description>B</description>
+    </other-participations>
+    <other-participations>
+      <data-name>J1IAriciUUDPb3BgFAvOZHZI1P.</data-name>
+      <resource-uri>Hm.h9szsL3p2FgBk2OhfvcKt-</resource-uri>
+      <description>WKBGeQhW5LOyvmWHqkqbLU6A-jW</description>
+    </other-participations>
+    <protocol-id>
+      <data-name>fRQBHpi</data-name>
+      <resource-uri>sqU8Oh-Dqcb7LNWxJK.cK</resource-uri>
+      <description>bWPqKX</description>
+      <id-name>dW_hBilvB-z5G</id-name>
+      <issuer>glNOF</issuer>
+      <assignor>fIdjQpi_ab8ujyVrnM</assignor>
+    </protocol-id>
+    <current-state>cOboVQy</current-state>
+    <workflow-id>
+      <data-name>t5JI53Nk8zW0-sx0jni</data-name>
+      <resource-uri>qkE9bz8ukK25oqsrcX8</resource-uri>
+      <description>HsqGH2L</description>
+      <relation>MKkfm</relation>
+    </workflow-id>
+    <attestation>
+      <data-name>n._vfsIDnx.</data-name>
+      <resource-uri>Z9D3xh1lPqehy2DVqaabZJPmj</resource-uri>
+      <description>OsOHGuZmLq6M_zPlZx7Ztgng</description>
+    </attestation>
+    <entry-data>
+      <data-name>Wv24o0ytk</data-name>
+      <resource-uri>zWUuuTsv</resource-uri>
+      <description>J.4FIZs</description>
+      <dv xsi:type="x2c:dvuri">
+        <data-name>g</data-name>
+        <resource-uri>oZ2uoXV7mm42fWAYq.X0DpZt6CH</resource-uri>
+        <description>Cfzbh</description>
+        <relation>ABzg8</relation>
+      </dv>
+      <dv xsi:type="x2c:dvuri">
+        <data-name>rN5GphXNBpNjl</data-name>
+        <resource-uri>eXH41j9ZmSMZJcFaNPot-D</resource-uri>
+        <description>WnXiG3j8lC4cJqYVyVW9R5TA5h</description>
+        <relation>IGTzy0ul2814fNTO4_-0</relation>
+      </dv>
+    </entry-data>
+  </x2c:entry>
+</x2c:xml-to-ccd>
