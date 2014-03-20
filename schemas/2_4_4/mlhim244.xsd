@@ -757,8 +757,9 @@
 
   <xs:complexType name="PartyType">
     <xs:annotation>
-      <xs:documentation>Abstract concept of a proxy description of a party, including an optional link to data for this party
-        in a demographic or other identity management system. Sub- typed into PartyIdentified and PartySelf. </xs:documentation>
+      <xs:documentation>Description of a party, including an optional external link to data for this party
+        in a demographic or other identity management system. An additional details element provides for the inclusion of information related to this party directly. 
+        If the party information is to be anonymous then do not include the details element. The string 'Self' may be entered as the party-name if an external_ref is include.</xs:documentation>
     </xs:annotation>
     <xs:sequence>
       <xs:element maxOccurs="1" minOccurs="0" name="party-name" type="xs:string">

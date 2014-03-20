@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+  xmlns:x2c="http://www.mlhim.org/xmlns/mlhim2/xml2ccd"
+  targetNamespace="http://www.mlhim.org/xmlns/mlhim2/xml2ccd" version="1.0"
+  xmlns:vc="http://www.w3.org/2007/XMLSchema-versioning" vc:minVersion="1.0">
+
+  <xs:element name="xml-to-ccd" type="x2c:xml-to-ccd"/>
+  
+  <xs:complexType name="xml-to-ccd">
+    <xs:sequence>
+      <xs:element name="version" minOccurs="1" maxOccurs="1" type="xs:string"/>
+      <xs:element minOccurs="1" maxOccurs="1" name="ccd-def" type="x2c:ccd-def"/>
+    </xs:sequence>
+  </xs:complexType>
+  
+  <xs:complexType name="ccd-def">
+    <xs:sequence>
+      <xs:element minOccurs="1" maxOccurs="1" ref="x2c:ct-id"/>
+      <xs:element minOccurs="1" maxOccurs="1" ref="x2c:title"/>
+      <xs:element minOccurs="1" maxOccurs="1" ref="x2c:description"/>
+      <xs:element minOccurs="1" maxOccurs="1" ref="x2c:subject"/>
+      <xs:element minOccurs="1" maxOccurs="1" ref="x2c:source"/>
+      <xs:element minOccurs="1" maxOccurs="1" ref="x2c:rights"/>
+      <xs:element minOccurs="1" maxOccurs="1" ref="x2c:relation"/>
+      <xs:element minOccurs="1" maxOccurs="1" ref="x2c:coverage"/>
+      <xs:element minOccurs="1" maxOccurs="1" ref="x2c:entry-type"/>
+      <xs:element minOccurs="1" maxOccurs="1" ref="x2c:creator-name"/>
+      <xs:element minOccurs="1" maxOccurs="1" ref="x2c:creator-email"/>
+      <xs:element minOccurs="0" maxOccurs="unbounded" ref="x2c:contributor"/>
+      <xs:element minOccurs="1" maxOccurs="1" ref="x2c:pcts"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:element name="ct-id" type="xs:string"/>
+  <xs:element name="title" type="xs:string"/>
+  <xs:element name="description" type="xs:string" default="None provided by author."/>
+  <xs:element name="subject" type="xs:string" default="None provided by author."/>
+  <xs:element name="source" type="xs:string" default="None provided by author."/>
+  <xs:element name="rights" type="xs:string" default="None provided by author."/>
+  <xs:element name="relation" type="xs:string" default="None provided by author."/>
+  <xs:element name="coverage" type="xs:string" default="None provided by author."/>
+  
+  <xs:element name="entry-type">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="admin"/>
+        <xs:enumeration value="care"/>
+        <xs:enumeration value="demog"/>
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  <xs:element name="creator-name" type="xs:string"/>
+  <xs:element name="creator-email" type="xs:string"/>
+
+  <xs:element name="contributor">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="name" minOccurs="1" maxOccurs="1" type="xs:string"/>
+        <xs:element name="email" minOccurs="1" maxOccurs="1" type="xs:string"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="pcts">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="unbounded" ref="x2c:pct"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="pct">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element minOccurs="1" maxOccurs="1" ref="x2c:pcttype"/>
+        <xs:element minOccurs="1" maxOccurs="1" ref="x2c:data-name"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="x2c:default"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="x2c:enumerations"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="x2c:resource-uri"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="x2c:docs"/>
+        <xs:element minOccurs="0" maxOccurs="1" ref="x2c:uom"/>
+      </xs:sequence>
+    </xs:complexType>
+  </xs:element>
+  
+  <xs:element name="pcttype">
+    <xs:simpleType>
+      <xs:restriction base="xs:string">
+        <xs:enumeration value="DvString"/>
+        <xs:enumeration value="DvCount"/>        
+        <xs:enumeration value="DvQuantity"/>        
+        <xs:enumeration value="DvOrdinal"/>        
+        <xs:enumeration value="DvBoolean"/>        
+        <xs:enumeration value="DvString-enumerated"/>        
+        <xs:enumeration value="DvTemporal-date"/>        
+        <xs:enumeration value="DvTemporal-datetime"/>        
+        <xs:enumeration value="DvTemporal-time"/>        
+        <xs:enumeration value="DvURI"/>        
+        <xs:enumeration value="DvMedia"/>        
+        <xs:enumeration value="DvParsable"/>        
+      </xs:restriction>
+    </xs:simpleType>
+  </xs:element>
+  
+  <xs:element name="data-name" type="xs:string"/>
+  <xs:element name="default" type="xs:string"/>
+  <xs:element name="enumerations" type="xs:string"/>
+  <xs:element name="resource-uri" type="xs:anyURI"/>
+  <xs:element name="docs" type="xs:string"/>
+  <xs:element name="uom" type="xs:string"/>
+</xs:schema>
