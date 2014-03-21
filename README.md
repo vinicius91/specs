@@ -1,4 +1,4 @@
-MLHIM Specifications & Reference Implmentation
+MLHIM Specifications & Reference Implementation
 ========================================
 
 Multi-Level Healthcare Information Modelling Specifications Specifications
