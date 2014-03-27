@@ -620,6 +620,9 @@
       <xs:element name="date-interval" type="xs:date"/>
       <xs:element name="datetime-interval" type="xs:dateTime"/>
       <xs:element name="time-interval" type="xs:time"/>
+      <xs:element name="day-interval" type="xs:gDay"/>
+      <xs:element name="month-interval" type="xs:gMonth"/>
+      <xs:element name="year-interval" type="xs:gYear"/>
       <xs:element name="duration-interval" type="xs:duration"/>
     </xs:choice>
   </xs:complexType>
